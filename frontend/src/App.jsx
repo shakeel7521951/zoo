@@ -1,30 +1,37 @@
-import "./App.css";
-import Footer from "./components/common/Footer";
-import Navbar from "./components/common/Navbar";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
+import './App.css'
+import Footer from './components/common/Footer'
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
+import Home from './pages/Home'
+import { useEffect } from 'react'
+import AOS from "aos";
+import "aos/dist/aos.css";
+import LoginForm from './pages/LoginForm';
+import SignupForm from './pages/SignupForm';
 
 const MainFunction = () => {
   return (
     <div>
-      <Navbar />
       <Outlet />
       <Footer />
     </div>
-  );
-};
+  )
+}
 
 const router = createBrowserRouter([
   {
     element: <MainFunction />,
-    children: [{ path: "/", element: <Home /> }],
-    children: [{ path: "/about", element: <About /> }],
-  },
-]);
+    children: [{ path: '/', element: <Home /> },
+      {path:"/login",element:<LoginForm />},
+      {path:"/signup",element:<SignupForm />}
+    ]
+  }
+])
 
-function App() {
-  return <RouterProvider router={router} />;
+function App () {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: false })
+  }, [])
+  return <RouterProvider router={router} />
 }
 
-export default App;
+export default App
