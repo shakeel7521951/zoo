@@ -3,6 +3,9 @@ import Footer from "./components/common/Footer";
 import Navbar from "./components/common/Navbar";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import LoginForm from "./pages/LoginForm";
+import SignupForm from "./pages/SignupForm";
 
 const MainFunction = () => {
   return (
@@ -17,7 +20,12 @@ const MainFunction = () => {
 const router = createBrowserRouter([
   {
     element: <MainFunction />,
-    children: [{ path: "/", element: <Home /> }],
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/contact", element: <Contact /> },
+      { path: "/login", element: <LoginForm /> },
+      { path: "/signup", element: <SignupForm /> },
+    ],
   },
 ]);
 
