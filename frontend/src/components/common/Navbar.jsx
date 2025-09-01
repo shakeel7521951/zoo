@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { FaPaw, FaLeaf, FaTicketAlt, FaTimes, FaBars } from "react-icons/fa";
+import { IoMdLogIn } from "react-icons/io";
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -47,7 +49,7 @@ const Navbar = () => {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Animals", path: "/animals" },
+    { name: "Services", path: "/services" },
     { name: "Events", path: "/events" },
     { name: "Contact", path: "/contact" }
   ];
@@ -116,8 +118,8 @@ const Navbar = () => {
               to="/donate"
               className="flex items-center px-4 py-2 bg-white text-green-700 font-medium rounded-md shadow hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg group"
             >
-              <FaLeaf className="mr-2 transform group-hover:scale-110 transition-transform duration-300" /> 
-              Support Zoo
+              <IoMdLogIn className="mr-2 transform group-hover:scale-110 transition-transform duration-300" /> 
+              Login
             </Link>
           </div>
 
@@ -171,7 +173,7 @@ const Navbar = () => {
               className="flex items-center justify-center px-4 py-3 bg-white text-green-700 font-medium rounded-md shadow hover:bg-gray-100 transition-colors duration-300"
               onClick={() => setIsOpen(false)}
             >
-              <FaLeaf className="mr-2" /> Support Zoo
+              <IoMdLogIn className="mr-2" /> Login
             </Link>
           </div>
         </div>
