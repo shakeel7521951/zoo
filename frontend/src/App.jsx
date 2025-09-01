@@ -5,6 +5,8 @@ import Home from './pages/Home'
 import { useEffect } from 'react'
 import AOS from "aos";
 import "aos/dist/aos.css";
+import LoginForm from './pages/LoginForm';
+import SignupForm from './pages/SignupForm';
 
 const MainFunction = () => {
   return (
@@ -18,7 +20,10 @@ const MainFunction = () => {
 const router = createBrowserRouter([
   {
     element: <MainFunction />,
-    children: [{ path: '/', element: <Home /> }]
+    children: [{ path: '/', element: <Home /> },
+      {path:"/login",element:<LoginForm />},
+      {path:"/signup",element:<SignupForm />}
+    ]
   }
 ])
 
