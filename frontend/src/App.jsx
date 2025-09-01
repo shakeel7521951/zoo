@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import LoginForm from './pages/LoginForm';
 import SignupForm from './pages/SignupForm';
+import About from './pages/About'
 
 const MainFunction = () => {
   return (
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
   {
     element: <MainFunction />,
     children: [{ path: '/', element: <Home /> },
+      { path: '/about', element: <About /> },
       {path:"/login",element:<LoginForm />},
       {path:"/signup",element:<SignupForm />}
     ]
