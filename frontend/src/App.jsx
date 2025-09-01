@@ -1,8 +1,10 @@
-import "./App.css";
-import Footer from "./components/common/Footer";
-import Navbar from "./components/common/Navbar";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home";
+import './App.css'
+import Footer from './components/common/Footer'
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
+import Home from './pages/Home'
+import { useEffect } from 'react'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const MainFunction = () => {
   return (
@@ -16,9 +18,9 @@ const MainFunction = () => {
 const router = createBrowserRouter([
   {
     element: <MainFunction />,
-    children: [{ path: "/", element: <Home /> }],
-  },
-]);
+    children: [{ path: '/', element: <Home /> }]
+  }
+])
 
 function App () {
   useEffect(() => {
