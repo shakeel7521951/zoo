@@ -1,23 +1,30 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { FaPaw, FaTicketAlt, FaCalendarAlt, FaArrowRight, FaLeaf, FaUser } from "react-icons/fa";
+import {
+  FaPaw,
+  FaTicketAlt,
+  FaCalendarAlt,
+  FaArrowRight,
+  FaLeaf,
+  FaUser,
+} from "react-icons/fa";
 
 export default function Hero() {
   useEffect(() => {
-    AOS.init({ 
-      duration: 1000, 
+    AOS.init({
+      duration: 1000,
       once: true,
-      easing: 'ease-out-cubic'
+      easing: "ease-out-cubic",
     });
   }, []);
 
   return (
     <section
-      className="relative min-h-screen w-full flex items-center justify-center text-center text-white px-6 overflow-hidden pt-10"
+      className="relative min-h-screen w-full flex items-center justify-center text-center text-white px-6 overflow-hidden pt-12"
       style={{
         backgroundImage:
-          "url('https://images.unsplash.com/photo-1564166174574-a9666f590437?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGFuaW1hbHxlbnwwfHwwfHx8MA%3D%3D')", 
+          "url('./contact/hero1.avif')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
@@ -30,10 +37,18 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0zMCAzMGEyMCAyMCAwIDExLTQwIDAgMjAgMjAgMCAwMTQwIDB6IiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIGZpbGw9Im5vbmUiLz48L3N2Zz4=')] opacity-30 mix-blend-soft-light"></div>
 
       {/* Animated floating elements */}
-      <div className="absolute top-20 left-10 opacity-20" data-aos="fade-down-right" data-aos-delay="800">
+      <div
+        className="hidden md:block absolute top-22 left-10 opacity-20"
+        data-aos="fade-down-right"
+        data-aos-delay="800"
+      >
         <FaPaw className="text-5xl text-yellow-400 animate-pulse" />
       </div>
-      <div className="absolute bottom-20 right-10 opacity-20" data-aos="fade-up-left" data-aos-delay="900">
+      <div
+        className="hidden md:block absolute bottom-20 right-10 opacity-20"
+        data-aos="fade-up-left"
+        data-aos-delay="900"
+      >
         <FaPaw className="text-5xl text-yellow-400 animate-pulse" />
       </div>
 
@@ -51,7 +66,7 @@ export default function Hero() {
           data-aos-delay="700"
         ></div>
 
-        {/* Main heading with animated letters */}
+        {/* Main heading */}
         <h1
           className="text-3xl md:text-7xl font-bold leading-tight tracking-tight mb-2"
           data-aos="fade-up"
@@ -89,72 +104,84 @@ export default function Hero() {
 
         {/* Buttons */}
         <div
-          className="mt-8 flex flex-col sm:flex-row justify-center gap-6 items-center"
+          className="mt-8 flex flex-row flex-wrap justify-center gap-4 sm:gap-6 items-center"
           data-aos="zoom-out-up"
           data-aos-delay="400"
         >
           {/* Primary Button */}
           <button
             type="button"
-            className="relative bg-gradient-to-r from-[#1B4332] to-[#2D6A4F] text-white px-8 py-4 sm:px-10 sm:py-4 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden flex items-center"
+            className="relative bg-gradient-to-r from-[#1B4332] to-[#2D6A4F] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden flex items-center"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#2D6A4F] to-[#1B4332] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <span className="relative z-10 whitespace-nowrap flex items-center">
-              <FaTicketAlt className="mr-3 transform group-hover:scale-110 transition-transform duration-300" />
+              <FaTicketAlt className="mr-2 sm:mr-3 transform group-hover:scale-110 transition-transform duration-300" />
               Explore Animal
             </span>
-            <FaArrowRight className="ml-3 relative z-10 transform -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" />
+            <FaArrowRight className="ml-2 sm:ml-3 relative z-10 transform -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" />
           </button>
 
           {/* Secondary Button */}
           <button
             type="button"
-            className="relative border-2 border-[#F2EDE9] text-white px-8 py-4 sm:px-10 sm:py-4 rounded-xl shadow-lg hover:-translate-y-1 transition-all duration-300 group overflow-hidden flex items-center"
+            className="relative border-2 border-[#F2EDE9] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl shadow-lg hover:-translate-y-1 transition-all duration-300 group overflow-hidden flex items-center"
           >
             <div className="absolute inset-0 bg-white/5 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <span className="relative z-10 whitespace-nowrap flex items-center">
-              <FaCalendarAlt className="mr-3 transform group-hover:scale-110 transition-transform duration-300" />
+              <FaCalendarAlt className="mr-2 sm:mr-3 transform group-hover:scale-110 transition-transform duration-300" />
               Plan Your Visit
             </span>
-            <FaArrowRight className="ml-3 relative z-10 transform -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" />
+            <FaArrowRight className="ml-2 sm:ml-3 relative z-10 transform -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" />
           </button>
         </div>
 
-        {/* Fixed Stats Section with React Icons */}
+        {/* Stats */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
-            { 
-              number: "200+", 
-              label: "Animal Species", 
+            {
+              number: "200+",
+              label: "Animal Species",
               icon: FaPaw,
-              delay: 600 
+              delay: 600,
             },
-            { 
-              number: "50+", 
-              label: "Conservation Programs", 
+            {
+              number: "50+",
+              label: "Conservation Programs",
               icon: FaLeaf,
-              delay: 800 
+              delay: 800,
             },
-            { 
-              number: "1M+", 
-              label: "Visitors Yearly", 
+            {
+              number: "1M+",
+              label: "Visitors Yearly",
               icon: FaUser,
-              delay: 1000 
-            }
+              delay: 1000,
+            },
           ].map((stat, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="bg-gradient-to-b from-[#1B4332]/50 to-[#081C15]/40 p-6 rounded-2xl backdrop-blur-md border border-[#2D6A4F]/40 hover:border-[#95D5B2]/60 transition-all duration-500 group hover:-translate-y-2 shadow-lg hover:shadow-xl"
               data-aos="fade-up"
               data-aos-delay={stat.delay}
             >
-              <div className="flex justify-center mb-2" data-aos="zoom-in" data-aos-delay={stat.delay + 200}>
+              <div
+                className="flex justify-center mb-2"
+                data-aos="zoom-in"
+                data-aos-delay={stat.delay + 200}
+              >
                 <stat.icon className="text-4xl text-yellow-400 group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <div className="text-4xl font-bold text-yellow-400 group-hover:scale-110 transition-transform duration-300 text-center" data-aos="zoom-in" data-aos-delay={stat.delay + 300}>
+              <div
+                className="text-4xl font-bold text-yellow-400 group-hover:scale-110 transition-transform duration-300 text-center"
+                data-aos="zoom-in"
+                data-aos-delay={stat.delay + 300}
+              >
                 {stat.number}
               </div>
-              <div className="text-[#F2EDE9] mt-3 text-lg group-hover:text-white transition-colors duration-300 text-center" data-aos="fade-in" data-aos-delay={stat.delay + 400}>
+              <div
+                className="text-[#F2EDE9] mt-3 text-lg group-hover:text-white transition-colors duration-300 text-center"
+                data-aos="fade-in"
+                data-aos-delay={stat.delay + 400}
+              >
                 {stat.label}
               </div>
             </div>
