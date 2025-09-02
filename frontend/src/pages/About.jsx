@@ -7,6 +7,7 @@ import MeetAnimals from '../components/About/MeetAnimal'
 function About() {
   return (
     <div>
+      
       <Hero/>
       <MissionVision/>
       <OurStory/>

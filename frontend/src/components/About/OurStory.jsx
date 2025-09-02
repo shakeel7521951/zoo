@@ -5,7 +5,7 @@ import { Calendar, Target, Heart, Zap, ChevronRight, Users } from "lucide-react"
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Utility color mapping for Tailwind
+// Color mapping for Tailwind
 const colorMap = {
   emerald: {
     border: "border-emerald-500",
@@ -27,6 +27,7 @@ const colorMap = {
   },
 };
 
+// Section Title Component
 function SectionTitle({ title, subtitle }) {
   return (
     <div className="text-center mb-16 sm:mb-20" data-aos="fade-up">
@@ -40,6 +41,7 @@ function SectionTitle({ title, subtitle }) {
   );
 }
 
+// Timeline events
 const timeline = [
   {
     year: "1987",
@@ -70,7 +72,7 @@ function OurStory() {
   }, []);
 
   return (
-    <section className="py-20 sm:py-24 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
+    <section className=" sm:py-24 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <SectionTitle
@@ -80,9 +82,8 @@ function OurStory() {
 
         {/* Timeline */}
         <div className="relative max-w-5xl mx-auto">
-          {/* Vertical Gradient Line */}
+          {/* Vertical Line */}
           <div className="absolute left-1/2 top-0 bottom-0 w-[3px] bg-gradient-to-b from-emerald-300 via-emerald-200 to-transparent transform -translate-x-1/2" />
-
           <div className="space-y-20 sm:space-y-24">
             {timeline.map((event, i) => {
               const colors = colorMap[event.color];
@@ -104,7 +105,7 @@ function OurStory() {
                     className={`absolute left-1/2 w-6 h-6 rounded-full border-4 ${colors.border} bg-white shadow-md z-10 transform -translate-x-1/2`}
                   />
 
-                  {/* Year */}
+                  {/* Year Badge */}
                   <div
                     className={`md:w-1/2 mb-6 md:mb-0 ${
                       i % 2 === 0 ? "md:pl-16 text-left" : "md:pr-16 text-right"
@@ -158,13 +159,24 @@ function OurStory() {
           transition={{ duration: 0.8 }}
           className="mt-24 sm:mt-32 relative rounded-3xl overflow-hidden shadow-2xl"
         >
-          {/* Layered background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 via-teal-600 to-emerald-800 opacity-90" />
+          {/* Background Image */}
+        <div
+  className="absolute inset-0 bg-cover bg-center h-screen"
+  style={{
+    backgroundImage:
+      "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBobenVgW1aqhB8_Ck1NcozmaEJ-009Pe7Dg&s')",
+  }}
+></div>
+
+
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/50" />
+          {/* Content */}
           <div className="relative z-10 p-8 sm:p-12 text-center text-white">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 drop-shadow-md">
               Our Future Vision
             </h3>
-            <p className="text-emerald-100 text-base sm:text-lg mb-6 sm:mb-8 max-w-3xl mx-auto">
+            <p className="text-white/90 text-base sm:text-lg mb-6 sm:mb-8 max-w-3xl mx-auto drop-shadow-sm">
               We're expanding conservation efforts, pioneering new education
               programs, and designing sustainable habitats to protect wildlife
               for generations.
@@ -186,33 +198,45 @@ function OurStory() {
               value: "37",
               label: "Years of Service",
               icon: <Calendar className="w-6 h-6 sm:w-7 sm:h-7" />,
+              bgImage:
+                "https://images.pexels.com/photos/20787/pexels-photo.jpg",
             },
             {
               value: "200+",
               label: "Animal Species",
               icon: <Heart className="w-6 h-6 sm:w-7 sm:h-7" />,
+              bgImage:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAQSUGcKXtDohjvnLLLV-yrggz_PoaMAk4VQ&s",
             },
             {
               value: "1M+",
               label: "Visitors Annually",
               icon: <Users className="w-6 h-6 sm:w-7 sm:h-7" />,
+              bgImage:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK9F1zUwb4LmFVQJIg-iJKHbBUGuusbia72g&s",
             },
           ].map((stat, i) => (
             <motion.div
               key={i}
               whileHover={{ scale: 1.05 }}
-              className="relative bg-white rounded-2xl text-center shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 p-8 sm:p-10"
+              className="relative rounded-2xl text-center shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 p-8 sm:p-10"
             >
-              {/* Glow effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-200 to-transparent opacity-20 blur-2xl" />
+              {/* Background Image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center shadow-lg"
+                style={{ backgroundImage: `url('${stat.bgImage}')` }}
+              />
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-black/40" />
+              {/* Content */}
               <div className="relative z-10">
-                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-emerald-100 to-emerald-200 text-emerald-700 rounded-xl mb-4 mx-auto">
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white/20 rounded-xl mb-4 mx-auto">
                   {stat.icon}
                 </div>
-                <div className="text-3xl sm:text-4xl font-extrabold text-emerald-700 mb-1 sm:mb-2">
+                <div className="text-3xl sm:text-4xl font-extrabold text-white mb-1 sm:mb-2">
                   {stat.value}
                 </div>
-                <div className="text-slate-600 font-medium text-sm sm:text-base">
+                <div className="text-white/90 font-medium text-sm sm:text-base">
                   {stat.label}
                 </div>
               </div>

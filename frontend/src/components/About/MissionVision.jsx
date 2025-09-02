@@ -131,41 +131,48 @@ function MissionVision() {
         </div>
 
         {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          data-aos="fade-up"
-          data-aos-delay="200"
-          className="mt-16 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-10 text-center text-white"
-        >
-          <div className="max-w-3xl mx-auto">
-            <Heart className="w-12 h-12 mx-auto mb-6 text-white" />
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Join Our Conservation Efforts
-            </h3>
-            <p className="text-emerald-100 text-lg mb-6">
-              Your support helps us continue our vital work in animal care,
-              conservation, and education.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-             
-              <a
-                href="#adopt"
-                className="px-6 py-3 bg-amber-500 text-white font-semibold rounded-xl hover:bg-amber-600 transition-colors duration-300 flex items-center gap-2 justify-center"
-              >
-                <Heart className="w-5 h-5" /> Adopt an Animal
-              </a>
-              <a
-                href="#tickets"
-                className="px-6 py-3 border-2 border-white text-white font-semibold rounded-xl hover:bg-white/10 transition-colors duration-300 flex items-center gap-2 justify-center"
-              >
-                <Ticket className="w-5 h-5" /> Buy Tickets
-              </a>
-            </div>
-          </div>
-        </motion.div>
+      <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+  viewport={{ once: true }}
+  data-aos="fade-up"
+  data-aos-delay="200"
+  className="mt-16 rounded-2xl p-10 text-center text-white relative overflow-hidden"
+  style={{
+    backgroundImage: "url('https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg?auto=compress&cs=tinysrgb&w=1600')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+  {/* Dark overlay for better readability */}
+  <div className="absolute inset-0 bg-black/50"></div>
+
+  <div className="relative z-10 max-w-3xl mx-auto">
+    <Heart className="w-12 h-12 mx-auto mb-6 text-white" />
+    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+      Join Our Conservation Efforts
+    </h3>
+    <p className="text-white/90 text-lg mb-6">
+      Your support helps us continue our vital work in animal care, conservation, and education.
+    </p>
+    <div className="flex flex-col sm:flex-row justify-center gap-4">
+      <a
+        href="#adopt"
+        className="px-6 py-3 bg-amber-500 text-white font-semibold rounded-xl hover:bg-amber-600 transition-colors duration-300 flex items-center gap-2 justify-center"
+      >
+        <Heart className="w-5 h-5" /> Adopt an Animal
+      </a>
+      <a
+        href="#tickets"
+        className="px-6 py-3 border-2 border-white text-white font-semibold rounded-xl hover:bg-white/10 transition-colors duration-300 flex items-center gap-2 justify-center"
+      >
+        <Ticket className="w-5 h-5" /> Buy Tickets
+      </a>
+    </div>
+  </div>
+</motion.div>
+
       </div>
     </section>
   );
