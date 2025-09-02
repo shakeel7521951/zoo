@@ -101,7 +101,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#2D6A4F] to-[#1B4332] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <span className="relative z-10 whitespace-nowrap flex items-center">
               <FaTicketAlt className="mr-3 transform group-hover:scale-110 transition-transform duration-300" />
-              Explore Animals
+              Explore Animal
             </span>
             <FaArrowRight className="ml-3 relative z-10 transform -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" />
           </button>
