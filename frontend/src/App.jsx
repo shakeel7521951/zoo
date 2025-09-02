@@ -10,6 +10,7 @@ import SignupForm from './pages/SignupForm';
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Footer from './components/common/Footer'
+import Services from './components/home/Services'
 
 const MainFunction = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
     element: <MainFunction />,
     children: [{ path: '/', element: <Home /> },
       { path: '/about', element: <About /> },
+      {path:"/services",element:<Services />},
       {path:"/login",element:<LoginForm />},
       {path:"/signup",element:<SignupForm />},
       {path:"/contact",element:<Contact />},
