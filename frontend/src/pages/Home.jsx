@@ -11,7 +11,6 @@ import FAQSection from '../components/home/FAQ'
 const Home = () => {
   return (
     <div className="overflow-x-hidden">
-      <Header/>
       <VideoSwiper/>
       <AboutZoo/>
       <Services/>
