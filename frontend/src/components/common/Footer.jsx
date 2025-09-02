@@ -13,7 +13,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-gradient-to-b from-green-700 via-green-600 to-emerald-700 text-white overflow-hidden">
+    <footer className="bg-gradient-to-r from-green-800 to-emerald-800 text-white overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-30"></div>
       
@@ -52,13 +52,13 @@ const Footer = () => {
                 <a 
                   key={index}
                   href="#" 
-                  className="bg-green-800 p-3 rounded-full transition-all duration-300 text-white transform hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center 
+                  className="bg-green-600 p-3 rounded-full transition-all duration-300 text-white transform hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center 
                   group overflow-hidden relative"
                   data-aos="zoom-in" 
                   data-aos-delay={200 + (index * 100)}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10 group-hover:scale-110 transition-transform duration-300">
+                  <div className="relative  z-10 group-hover:scale-110 transition-transform duration-300">
                     {social.icon}
                   </div>
                 </a>
