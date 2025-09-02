@@ -1,5 +1,5 @@
 import './App.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
 import Navbar from './components/common/Navbar'
 import Home from './pages/Home'
@@ -10,7 +10,7 @@ import SignupForm from './pages/SignupForm';
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Footer from './components/common/Footer'
-import Services from './components/home/Services'
+import Services from './pages/Services'
 
 const MainFunction = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
