@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { FaPhoneAlt } from "react-icons/fa";
 import {
   FaEnvelope,
   FaPhone,
@@ -66,7 +67,7 @@ export default function ContactForm() {
       <div className="grid md:grid-cols-2 gap-12 relative ">
         {/* Contact Form */}
         <div
-          className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-green-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-[120vh]"
+          className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-green-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-[100vh] sm:h-[120vh] "
           data-aos="fade-up"
         >
           <div className="bg-gradient-to-r from-green-600 to-emerald-700 py-6 px-8 relative overflow-hidden">
@@ -165,7 +166,7 @@ export default function ContactForm() {
             <ul className="space-y-6 text-gray-700">
               {[
                 { icon: FaEnvelope, title: "Email", info: "info@wildlifezoo.org", details: "Replies within 24 hours" },
-                { icon: FaPhone, title: "Phone", info: "+123 456 7890", details: "Call hours: 9AM - 5PM" },
+                { icon: FaPhoneAlt, title: "Phone", info: "+123 456 7890", details: "Call hours: 9AM - 5PM" },
                 { icon: FaMapMarkerAlt, title: "Visit Us", info: "Wildlife Zoo Park, Main City, Country", details: "Open daily 9AM - 7PM" }
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-4 group hover:bg-green-50 p-3 rounded-xl transition-all duration-300">
@@ -193,7 +194,8 @@ export default function ContactForm() {
             <ul className="space-y-4">
               {[
                 { icon: FaFileAlt, title: "Download Tickets", description: "Access your zoo tickets" },
-                { icon: FaComments, title: "Animal Adoption & FAQs", description: "Learn how you can support animals" },
+            // Adoption
+                { icon: FaComments, title: "Animal & FAQs", description: "Learn how you can support animals" },
                 { icon: FaQuestionCircle, title: "Visit FAQs", description: "Find answers about zoo timings & events" }
               ].map((item, index) => (
                 <li key={index} className="flex items-center gap-4 p-4 rounded-xl hover:bg-green-50 cursor-pointer transition-all duration-300 group border border-transparent hover:border-green-200">
@@ -211,16 +213,6 @@ export default function ContactForm() {
           </div>
         </div>
       </div>
-
-      {/* Success message */}
-      {isSubmitted && (
-        <div
-          className="mt-8 text-center py-4 px-6 bg-green-100 border border-green-400 text-green-700 rounded-xl font-semibold animate-pulse"
-          data-aos="fade-up"
-        >
-          ✅ Thank you! Your message has been sent to the Zoo team.
-        </div>
-      )}
     </div>
   );
 }

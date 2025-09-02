@@ -1,14 +1,15 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { 
-  FaMapMarkerAlt, 
-  FaDirections, 
-  FaCopy, 
-  FaPaw, 
-  FaLeaf, 
-  FaClock, 
-  FaPhone, 
+import { FaPhoneAlt } from "react-icons/fa";
+import {
+  FaMapMarkerAlt,
+  FaDirections,
+  FaCopy,
+  FaPaw,
+  FaLeaf,
+  FaClock,
+  FaPhone,
   FaTicketAlt,
   FaCar,
   FaBus,
@@ -17,8 +18,8 @@ import {
 
 export default function Map() {
   useEffect(() => {
-    AOS.init({ 
-      duration: 1000, 
+    AOS.init({
+      duration: 1000,
       once: true,
       easing: 'ease-out-cubic'
     });
@@ -54,8 +55,8 @@ export default function Map() {
             Visit Our Wildlife Sanctuary
           </h2>
           <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Explore a world of wildlife! Our zoo is open year-round and 
-            located in the heart of the city. Come with your family and enjoy 
+            Explore a world of wildlife! Our zoo is open year-round and
+            located in the heart of the city. Come with your family and enjoy
             the amazing animals, nature trails, and fun activities.
           </p>
         </div>
@@ -99,32 +100,32 @@ export default function Map() {
                   </p>
                 </div>
               </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
+
+              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:justify-center">
                 <a
                   href="https://maps.google.com/?q=Melbourne+Zoo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-700 text-white rounded-xl font-semibold hover:from-green-700 hover:to-emerald-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+                  className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-700 text-white rounded-xl font-semibold hover:from-green-700 hover:to-emerald-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2 group"
                 >
                   <FaDirections className="text-yellow-300 group-hover:scale-110 transition-transform duration-300" />
                   Get Directions
                 </a>
+
                 <button
                   onClick={copyAddress}
-                  className="px-6 py-3 border-2 border-green-600 text-gray-800 rounded-xl font-semibold hover:bg-green-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-center gap-2 group"
+                  className="w-full sm:w-auto px-6 py-3 border-2 border-green-600 text-gray-800 rounded-xl font-semibold hover:bg-green-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-center justify-center gap-2 group"
                 >
                   <FaCopy className="text-green-600 group-hover:text-white transition-colors duration-300" />
                   Copy Address
                 </button>
               </div>
             </div>
-
             {/* Additional Info */}
             <div className="mt-6 pt-6 border-t border-green-200 grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { icon: FaClock, label: "Opening Hours", value: "9:00 AM - 6:00 PM" },
-                { icon: FaPhone, label: "Contact", value: "+123 456 7890" },
+                { icon: FaPhoneAlt, label: "Contact", value: "+123 456 7890" },
                 { icon: FaTicketAlt, label: "Tickets", value: "Available Online" }
               ].map((item, index) => (
                 <div key={index} className="text-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 group hover:-translate-y-1">
