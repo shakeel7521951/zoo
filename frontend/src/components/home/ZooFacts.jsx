@@ -3,10 +3,10 @@ import { FaPaw, FaUsers, FaCertificate, FaShieldAlt } from "react-icons/fa";
 
 const ZooFacts = () => {
   const stats = [
-    { icon: <FaPaw className="text-[#2EB872] text-5xl mb-3 transition-transform duration-300 group-hover:scale-110" />, number: 12345, label: "Total Animals" },
-    { icon: <FaUsers className="text-[#2EB872] text-5xl mb-3 transition-transform duration-300 group-hover:scale-110" />, number: 6789, label: "Daily Visitors" },
-    { icon: <FaCertificate className="text-[#2EB872] text-5xl mb-3 transition-transform duration-300 group-hover:scale-110" />, number: 2345, label: "Total Memberships" },
-    { icon: <FaShieldAlt className="text-[#2EB872] text-5xl mb-3 transition-transform duration-300 group-hover:scale-110" />, number: 4567, label: "Save Wildlife" },
+    { icon: <FaPaw className="text-[#2EB872] text-5xl mb-3" />, number: 12345, label: "Total Animals" },
+    { icon: <FaUsers className="text-[#2EB872] text-5xl mb-3" />, number: 6789, label: "Daily Visitors" },
+    { icon: <FaCertificate className="text-[#2EB872] text-5xl mb-3" />, number: 2345, label: "Total Memberships" },
+    { icon: <FaShieldAlt className="text-[#2EB872] text-5xl mb-3" />, number: 4567, label: "Save Wildlife" },
   ];
 
   return (
@@ -21,16 +21,18 @@ const ZooFacts = () => {
 
         {/* Content */}
         <div className="relative container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             {stats.map((state, index) => (
               <div
                 key={index}
                 className="relative group p-6 flex flex-col items-center justify-center 
                            rounded-xl transition-all duration-500 
                            hover:scale-105 
-                           cursor-pointer "
-                data-aos="fade-up"
-                data-aos-delay={index * 150}
+                           cursor-pointer"
+                data-aos="zoom-in"              
+                data-aos-delay={index * 200}    
+                data-aos-duration="1000"        
+                data-aos-easing="ease-in-out"  
               >
                 {/* Icon */}
                 <div className="flex justify-center">{state.icon}</div>

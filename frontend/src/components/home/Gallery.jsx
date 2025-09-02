@@ -22,7 +22,7 @@ const ZooGallery = () => {
         <h1 className="text-4xl font-extrabold text-green-900 mb-4">
           Explore Our Animal Gallery
         </h1>
-        <p className="text-gray-600 max-w-2xl">
+        <p className="text-gray-600 max-w-2xl mx-auto lg:mx-0">
           Step into the wild and discover the beauty of nature’s most
           fascinating creatures. Our gallery showcases animals from across the
           world, each captured in stunning detail to bring their charm and
@@ -30,82 +30,80 @@ const ZooGallery = () => {
         </p>
       </div>
 
-      {/* Custom Gallery Layout */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="flex flex-col gap-6">
-            {animals.slice(0, 3).map((animal, index) => (
-              <div
-                key={index}
-                className="relative group overflow-hidden rounded-2xl shadow-xl"
-              >
-                <img
-                  src={animal.src}
-                  alt={animal.name}
-                  className="w-full h-60 object-cover transform group-hover:scale-110 transition duration-500"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end">
-                  <h2 className="text-white text-lg font-semibold p-4">
-                    {animal.name}
-                  </h2>
-                </div>
+      {/* Gallery Layout: 3 cols → (3 | 2 | 3) */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Left Column: 3 images */}
+        <div className="flex flex-col gap-6">
+          {animals.slice(0, 3).map((animal, index) => (
+            <div
+              key={index}
+              className="relative group overflow-hidden rounded-2xl shadow-xl"
+            >
+              <img
+                src={animal.src}
+                alt={animal.name}
+                className="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end">
+                <h2 className="text-white text-lg font-semibold p-4">
+                  {animal.name}
+                </h2>
               </div>
-            ))}
-          </div>
-
-          <div className="flex flex-col justify-center gap-6">
-            {animals.slice(3, 5).map((animal, index) => (
-              <div
-                key={index}
-                className="relative group overflow-hidden rounded-2xl shadow-xl"
-              >
-                <img
-                  src={animal.src}
-                  alt={animal.name}
-                  className="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end">
-                  <h2 className="text-white text-lg font-semibold p-4">
-                    {animal.name}
-                  </h2>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex flex-col gap-6">
-            {animals.slice(5, 8).map((animal, index) => (
-              <div
-                key={index}
-                className="relative group overflow-hidden rounded-2xl shadow-xl"
-              >
-                <img
-                  src={animal.src}
-                  alt={animal.name}
-                  className="w-full h-60 object-cover transform group-hover:scale-110 transition duration-500"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end">
-                  <h2 className="text-white text-lg font-semibold p-4">
-                    {animal.name}
-                  </h2>
-                </div>
-              </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
-        {/* Load More Button */}
-        <div className="text-center mt-16">
-          <a
-            href="masonary_gallery.html"
-            className="bg-green-900 hover:bg-green-800 text-white px-10 py-4 rounded-full font-semibold shadow-lg transition-transform transform hover:scale-105"
-          >
-            Load More
-          </a>
+        {/* Center Column: 2 images */}
+        <div className="flex flex-col gap-6 justify-center">
+          {animals.slice(3, 5).map((animal, index) => (
+            <div
+              key={index}
+              className="relative group overflow-hidden rounded-2xl shadow-xl"
+            >
+              <img
+                src={animal.src}
+                alt={animal.name}
+                className="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end">
+                <h2 className="text-white text-lg font-semibold p-4">
+                  {animal.name}
+                </h2>
+              </div>
+            </div>
+          ))}
         </div>
+
+        {/* Right Column: 3 images */}
+        <div className="flex flex-col gap-6">
+          {animals.slice(5, 8).map((animal, index) => (
+            <div
+              key={index}
+              className="relative group overflow-hidden rounded-2xl shadow-xl"
+            >
+              <img
+                src={animal.src}
+                alt={animal.name}
+                className="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end">
+                <h2 className="text-white text-lg font-semibold p-4">
+                  {animal.name}
+                </h2>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Load More Button */}
+      <div className="text-center mt-16">
+        <a
+          href="masonary_gallery.html"
+          className="bg-green-900 hover:bg-green-800 text-white px-10 py-4 rounded-full font-semibold shadow-lg transition-transform transform hover:scale-105"
+        >
+          Load More
+        </a>
       </div>
     </section>
   )
