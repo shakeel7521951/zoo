@@ -231,55 +231,64 @@ export default function HeroSection() {
           </div>
 
           {/* Notice */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            data-aos="zoom-in-up"
-            data-aos-delay="400"
-            className="mt-12 sm:mt-16 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-6 sm:p-8 text-center text-white shadow-xl"
-          >
-            <div className="max-w-3xl mx-auto">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-5 sm:mb-6 bg-white/20 rounded-full flex items-center justify-center">
-                <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-              </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
-                Business Hours
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6">
-                <div className="bg-white/10 p-3 sm:p-4 rounded-lg" data-aos="fade-up" data-aos-delay="200">
-                  <p className="font-semibold text-sm sm:text-base">Monday - Friday</p>
-                  <p className="text-blue-100 text-xs sm:text-sm">9:00 AM - 6:00 PM</p>
-                </div>
-                <div className="bg-white/10 p-3 sm:p-4 rounded-lg" data-aos="fade-up" data-aos-delay="400">
-                  <p className="font-semibold text-sm sm:text-base">Saturday</p>
-                  <p className="text-blue-100 text-xs sm:text-sm">10:00 AM - 4:00 PM</p>
-                </div>
-                <div className="bg-white/10 p-3 sm:p-4 rounded-lg" data-aos="fade-up" data-aos-delay="600">
-                  <p className="font-semibold text-sm sm:text-base">Sunday</p>
-                  <p className="text-blue-100 text-xs sm:text-sm">Closed</p>
-                </div>
-              </div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.8 }}
-                className="mt-4 sm:mt-6 py-2 sm:py-3 px-4 sm:px-6 bg-white/20 rounded-full inline-flex items-center text-xs sm:text-sm"
-              >
-                <span className="h-2 w-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-                <span className="font-medium">Now open daily from 9AM to 6PM</span>
-              </motion.div>
-              <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
-                <button className="px-5 sm:px-6 py-2 sm:py-3 bg-white text-blue-700 font-semibold rounded-xl hover:bg-slate-100 transition-colors duration-300 focus:ring-4 focus:ring-white focus:outline-none text-sm sm:text-base">
-                  Get Directions
-                </button>
-                <button className="px-5 sm:px-6 py-2 sm:py-3 border-2 border-white text-white font-semibold rounded-xl hover:bg-white/10 transition-colors duration-300 focus:ring-4 focus:ring-white focus:outline-none text-sm sm:text-base">
-                  Contact Us
-                </button>
-              </div>
-            </div>
-          </motion.div>
+         <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+  viewport={{ once: true }}
+  data-aos="zoom-in-up"
+  data-aos-delay="400"
+  className="mt-12 sm:mt-16 rounded-2xl p-6 sm:p-8 text-center text-white  relative overflow-hidden shadow-2lg"
+  style={{
+    backgroundImage: "url('https://images.pexels.com/photos/5122628/pexels-photo-5122628.jpeg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+  {/* Overlay for better readability */}
+  <div className="absolute inset-0 bg-black/50"></div>
+
+  <div className="relative z-10 max-w-3xl mx-auto">
+    <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-5 sm:mb-6 bg-white/20 rounded-full flex items-center justify-center">
+      <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+    </div>
+    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
+      Business Hours
+    </h3>
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6">
+      <div className="bg-white/10 p-3 sm:p-4 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+        <p className="font-semibold text-sm sm:text-base">Monday - Friday</p>
+        <p className="text-blue-100 text-xs sm:text-sm">9:00 AM - 6:00 PM</p>
+      </div>
+      <div className="bg-white/10 p-3 sm:p-4 rounded-lg" data-aos="fade-up" data-aos-delay="400">
+        <p className="font-semibold text-sm sm:text-base">Saturday</p>
+        <p className="text-blue-100 text-xs sm:text-sm">10:00 AM - 4:00 PM</p>
+      </div>
+      <div className="bg-white/10 p-3 sm:p-4 rounded-lg" data-aos="fade-up" data-aos-delay="600">
+        <p className="font-semibold text-sm sm:text-base">Sunday</p>
+        <p className="text-blue-100 text-xs sm:text-sm">Closed</p>
+      </div>
+    </div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 0.8 }}
+      className="mt-4 sm:mt-6 py-2 sm:py-3 px-4 sm:px-6 bg-white/20 rounded-full inline-flex items-center text-xs sm:text-sm"
+    >
+      <span className="h-2 w-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+      <span className="font-medium">Now open daily from 9AM to 6PM</span>
+    </motion.div>
+    <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
+      <button className="px-5 sm:px-6 py-2 sm:py-3 bg-white text-blue-700 font-semibold rounded-xl hover:bg-slate-100 transition-colors duration-300 focus:ring-4 focus:ring-white focus:outline-none text-sm sm:text-base">
+        Get Directions
+      </button>
+      <button className="px-5 sm:px-6 py-2 sm:py-3 border-2 border-white text-white font-semibold rounded-xl hover:bg-white/10 transition-colors duration-300 focus:ring-4 focus:ring-white focus:outline-none text-sm sm:text-base">
+        Contact Us
+      </button>
+    </div>
+  </div>
+</motion.div>
+
         </div>
       </div>
 
