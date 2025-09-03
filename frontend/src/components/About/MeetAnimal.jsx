@@ -24,7 +24,7 @@ function StatusBadge({ status }) {
   Vulnerable: "bg-yellow-700 text-white",      // darker yellow
   Endangered: "bg-red-800 text-white",        // dark red
   "Least Concern": "bg-green-900 text-white", // dark green
-  "Near Threatened": "bg-blue-800 text-white" // dark blue
+  "Near Threatened": "bg-blue-800 text-white"
 };
 
   return (
