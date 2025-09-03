@@ -115,12 +115,12 @@ export default function ContactForm() {
               <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                 <FaFileAlt className="text-green-700 group-hover:text-yellow-400 transition-colors duration-300" />
               </div>
-              <select className="w-full border border-[#2D6A4F]/40 bg-transparent text-black rounded-xl pl-12 p-4 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all duration-300 group-hover:shadow-lg group-hover:border-[#95D5B2]/60 appearance-none">
-                <option className="bg-[#1B4332] text-[#F2EDE9]">Choose a Topic</option>
-                <option className="bg-[#1B4332] text-[#F2EDE9]">Ticket Information</option>
-                <option className="bg-[#1B4332] text-[#F2EDE9]">Animal Adoption</option>
-                <option className="bg-[#1B4332] text-[#F2EDE9]">Zoo Events</option>
-                <option className="bg-[#1B4332] text-[#F2EDE9]">General Inquiry</option>
+              <select className="w-full border border-[#2D6A4F]/40 bg-transparent text-black rounded-xl pl-12 p-4 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all duration-300 group-hover:shadow-lg group-hover:border-[#95D5B2]/60 appearance-none ">
+                <option className="bg-green-900  text-[#F2EDE9]">Choose a Topic</option>
+                <option className="bg-green-900  text-[#F2EDE9]">Ticket Information</option>
+                <option className="bg-green-900  text-[#F2EDE9]">Animal Adoption</option>
+                <option className="bg-green-900  text-[#F2EDE9]">Zoo Events</option>
+                <option className="bg-green-900  text-[#F2EDE9]">General Inquiry</option>
               </select>
             </div>
 
@@ -230,11 +230,11 @@ export default function ContactForm() {
                   title: "Download Tickets",
                   description: "Access your zoo tickets",
                 },
-                {
-                  icon: FaComments,
-                  title: "Animal & FAQs",
-                  description: "Learn how you can support animals",
-                },
+                // {
+                //   icon: FaComments,
+                //   title: "Animal & FAQs",
+                //   description: "Learn how you can support animals",
+                // },
                 {
                   icon: FaQuestionCircle,
                   title: "Visit FAQs",

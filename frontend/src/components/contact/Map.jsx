@@ -45,7 +45,7 @@ export default function Map() {
         <div className="text-center mb-16" data-aos="fade-up">
           <div className="inline-flex items-center justify-center mb-4 relative">
             <div className="w-16 h-1 bg-gradient-to-r from-transparent to-green-800 mr-4"></div>
-            <span className="text-lg font-semibold tracking-wider text-green-800 uppercase bg-green-100 px-4 py-2 rounded-full shadow-inner flex items-center gap-2">
+            <span className="text-lg font-semibold tracking-wider text-green-800 uppercase bg-green-100 px-4 py-2 rounded-full shadow-inner flex items-center gap-2 text-nowrap">
               <FaMap className="text-green-700" />
               Zoo Location
             </span>
