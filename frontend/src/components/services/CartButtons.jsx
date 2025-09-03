@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { addToCart, buyNow } from "../../redux/cartSlice";
 
-const CartButtons = ({ product }) => {
+const CartButtons = ({ product }) => { 
     const dispatch = useDispatch();
 
     return (
