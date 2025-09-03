@@ -53,18 +53,6 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl px-4 mt-16">
-        {/* Decorative circles */}
-        <div
-          className="absolute -top-10 -left-10 w-28 h-28 border-4 border-[#F2EDE9]/10 rounded-full"
-          data-aos="zoom-in"
-          data-aos-delay="600"
-        ></div>
-        <div
-          className="absolute -bottom-8 -right-8 w-20 h-20 border-4 border-[#F2EDE9]/10 rounded-full"
-          data-aos="zoom-in"
-          data-aos-delay="700"
-        ></div>
-
         {/* Main heading */}
         <h1
           className="text-3xl md:text-7xl font-bold leading-tight tracking-tight mb-2"
