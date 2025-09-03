@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Model from "../common/Model";
 import { Link } from "react-router-dom";
-import { FaPaw, FaTicketAlt, FaTimes, FaBars } from "react-icons/fa";
+import { FaPaw, FaTicketAlt, FaTimes, FaBars, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { IoMdLogIn } from "react-icons/io";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -8,6 +9,8 @@ import "aos/dist/aos.css";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const [isLanguageHovered, setIsLanguageHovered] = useState(false);
 
   useEffect(() => {
     AOS.init({
@@ -25,12 +28,24 @@ const Navbar = () => {
     { name: "Contact", path: "/contact" },
   ];
 
+  const languages = [
+    { code: "en", name: "English" },
+    { code: "ar", name: "Arabic" }
+  ];
+
+  const handleLanguageChange = (languageCode) => {
+    // Implement language change logic here
+    console.log(`Language changed to: ${languageCode}`);
+    setIsLanguageDropdownOpen(false);
+  };
+
   return (
     <>
       {/* Navbar */}
       <nav className="fixed w-full z-50 bg-gradient-to-r from-green-800 to-emerald-800 py-1 shadow-md">
         <div className="max-w-8xl mx-auto px-6">
           <div className="flex items-center justify-between h-16">
+            <Model isOpen={showModal}  onClose={()=>setShowModal(false)}/>
             {/* Logo */}
             <Link
               to="/"
@@ -59,6 +74,47 @@ const Navbar = () => {
                     </span>
                   </Link>
                 ))}
+                
+                {/* Language Selector */}
+                <div 
+                  className="relative"
+                  onMouseEnter={() => {
+                    setIsLanguageHovered(true);
+                    setIsLanguageDropdownOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    setIsLanguageHovered(false);
+                    setIsLanguageDropdownOpen(false);
+                  }}
+                >
+                  <button className="flex items-center px-4 py-2 rounded-md text-sm font-medium text-white group overflow-hidden relative">
+                    <div className="absolute inset-0 bg-yellow-400 rounded-md transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300 ease-out"></div>
+                    <span className="relative text-[18px] z-10 group-hover:text-green-900 transition-colors duration-300 flex items-center">
+                      Languages
+                      {/* Show different icon based on hover state */}
+                      {isLanguageHovered ? (
+                        <FaChevronUp className="ml-2 text-sm" />
+                      ) : (
+                        <FaChevronDown className="ml-2 text-sm" />
+                      )}
+                    </span>
+                  </button>
+                  
+                  {/* Language Dropdown */}
+                  {isLanguageDropdownOpen && (
+                    <div className="absolute left-0 mt-1.5 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                      {languages.map((language) => (
+                        <button
+                          key={language.code}
+                          onClick={() => handleLanguageChange(language.code)}
+                          className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-green-100 hover:text-green-900 transition-colors duration-200"
+                        >
+                          {language.name}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
 
@@ -100,7 +156,7 @@ const Navbar = () => {
         <div
           className={`lg:hidden transition-all duration-300 ease-in-out  ${
             isOpen
-              ? "max-h-[70vh] opacity-100 visible"
+              ? "max-h-[80vh] opacity-100 visible"
               : "max-h-0 opacity-0 invisible"
           } bg-gradient-to-b from-green-700 to-emerald-800 shadow-xl`}
         >
@@ -115,6 +171,26 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            
+            {/* Language Options for Mobile */}
+            <div className="px-3 py-3 text-center">
+              <div className="text-white font-medium mb-2">Languages</div>
+              <div className="flex justify-center space-x-4">
+                {languages.map((language) => (
+                  <button
+                    key={language.code}
+                    onClick={() => {
+                      handleLanguageChange(language.code);
+                      setIsOpen(false);
+                    }}
+                    className="px-4 py-2 bg-white text-green-700 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors duration-300"
+                  >
+                    {language.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+            
             <div className="pt-4 border-t border-green-600 mt-2">
               <button
                 onClick={() => {
@@ -137,91 +213,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Tickets Modal */}
-      {showModal && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <div
-            data-aos="zoom-in"
-            className="bg-white w-full max-w-xl rounded-2xl shadow-2xl p-8 relative animate-fadeIn"
-          >
-            {/* Close */}
-            <button
-              onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-red-500 transition-colors"
-            >
-              <FaTimes size={22} />
-            </button>
-
-            {/* Header */}
-            <div className="flex flex-col items-center text-center mb-8">
-              <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#2D6A4F]/100 hover:bg-yellow-400 shadow-md mb-3">
-                <FaPaw className="text-white text-2xl" />
-              </div>
-              <h2 className="text-3xl font-extrabold text-green-800">
-                Book Your Tickets
-              </h2>
-              <p className="text-gray-600 mt-2 text-sm">
-                Experience a day full of adventure and wildlife at City Zoo
-              </p>
-            </div>
-
-            {/* Form */}
-            <form className="space-y-6">
-              <div>
-                <label className="block text-green-900 font-semibold mb-2">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="Enter your name"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-600 focus:outline-none shadow-sm transition-all"
-                />
-              </div>
-
-              <div>
-                <label className="block text-green-900 font-semibold mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-600 focus:outline-none shadow-sm transition-all"
-                />
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-green-900 font-semibold mb-2">
-                    Tickets
-                  </label>
-                  <input
-                    type="number"
-                    min="1"
-                    placeholder="e.g. 2"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-600 focus:outline-none shadow-sm transition-all"
-                  />
-                </div>
-                <div>
-                  <label className="block text-green-900 font-semibold mb-2">
-                    Date
-                  </label>
-                  <input
-                    type="date"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-600 focus:outline-none shadow-sm transition-all"
-                  />
-                </div>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full py-3 mt-4 bg-gradient-to-r from-green-800 to-emerald-900 text-white text-lg font-bold rounded-xl shadow-lg hover:from-green-900 hover:to-emerald-800 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                Confirm Purchase
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
+      
     </>
   );
 };
