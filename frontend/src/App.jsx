@@ -11,6 +11,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Footer from './components/common/Footer'
 import Services from './pages/Services'
+import Events from './pages/Events'
 
 const MainFunction = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
       {path:"/login",element:<LoginForm />},
       {path:"/signup",element:<SignupForm />},
       {path:"/contact",element:<Contact />},
+      {path: "/events", element: <Events/>}
     ]
   }
 ])

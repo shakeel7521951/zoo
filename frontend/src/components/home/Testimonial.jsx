@@ -33,32 +33,31 @@ const testimonials = [
 
 const TestimonialSwiper = () => {
   return (
-    <div className='w-full bg-green-50 pt-16 pb-12'>
+    <div className='w-full bg-gradient-to-br from-green-900 via-green-900 to-[#fdc500] pt-16 pb-12'>
       <div className='max-w-5xl mx-auto px-4'>
-        <p className='text-green-700 font-semibold uppercase tracking-wide mb-1 lg:text-left text-center'>
+        <p className='text-[#fdc500] font-semibold uppercase tracking-wide mb-1 lg:text-left text-center'>
           # Testimonials
         </p>
+
         {/* Title */}
         <h2
-          className='text-4xl  font-bold text-green-900 mb-3 tracking-tight text-center lg:text-left'
+          className='text-4xl font-bold text-white mb-3 tracking-tight text-center lg:text-left'
           data-aos='fade-up'
         >
           What Our Visitors Say
         </h2>
 
-       
-
         {/* Swiper */}
         <div className='mt-12 w-full'>
           <div
-            className='rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.1)] overflow-hidden bg-white'
+            className='rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.2)] overflow-hidden bg-white'
             data-aos='fade-up'
             data-aos-delay='200'
           >
             <Swiper
               modules={[Pagination, Autoplay]}
               pagination={{ el: '.custom-pagination', clickable: true }}
-              autoplay={{ delay: 4000, disableOnInteraction: false }}
+              autoplay={{ delay: 2000, disableOnInteraction: false }}
               loop={true}
               spaceBetween={30}
             >
@@ -86,9 +85,9 @@ const TestimonialSwiper = () => {
                             xmlns='http://www.w3.org/2000/svg'
                             fill='currentColor'
                             viewBox='0 0 24 24'
-                            className={`w-5 h-5 ${
+                            className={`w-5 h-5 transition-colors duration-300 ${
                               i < item.rating
-                                ? 'text-green-900'
+                                ? 'text-[#fdc500]'
                                 : 'text-gray-300'
                             }`}
                           >
@@ -103,7 +102,7 @@ const TestimonialSwiper = () => {
                       </p>
 
                       {/* Name & Role */}
-                      <h4 className='font-semibold text-green-900'>
+                      <h4 className='font-semibold text-green-900 group-hover:text-[#fdc500] transition-colors duration-300'>
                         {item.name}
                       </h4>
                       <p className='text-sm text-green-700'>{item.role}</p>
@@ -115,7 +114,24 @@ const TestimonialSwiper = () => {
           </div>
 
           {/* Custom Pagination */}
-          <div className='custom-pagination flex justify-center gap-2 mt-6'></div>
+          <div className='custom-pagination flex justify-center gap-2 mt-6'>
+            {/* Style for bullets */}
+            <style jsx>{`
+              .custom-pagination .swiper-pagination-bullet {
+                width: 12px;
+                height: 12px;
+                background-color: #14532d;
+                opacity: 0.6;
+                transition: all 0.3s ease;
+                border-radius: 50%;
+              }
+              .custom-pagination .swiper-pagination-bullet-active {
+                background-color: #fdc500;
+                transform: scale(1.2);
+                opacity: 1;
+              }
+            `}</style>
+          </div>
         </div>
       </div>
     </div>

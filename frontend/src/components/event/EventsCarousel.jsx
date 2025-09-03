@@ -1,0 +1,104 @@
+// src/components/Event/EventsCarousel.jsx
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Link } from "react-router-dom";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
+const events = [
+    {
+        id: 1,
+        title: "Penguin Feeding Show",
+        subTitle: "Live Performance",
+        desc: "Watch adorable penguins being fed by our zookeepers. Fun for all ages!",
+        date: "Sep 15, 2025",
+        video: "https://www.pexels.com/download/video/17035739/", // 🔹 Local or hosted video
+    },
+    {
+        id: 2,
+        title: "Lion Roar Experience",
+        subTitle: "Close-Up Adventure",
+        desc: "Get close to the King of the Jungle in a safe, thrilling environment.",
+        date: "Sep 20, 2025",
+        video: "https://www.pexels.com/download/video/33655775/",
+    },
+    {
+        id: 3,
+        title: "Giraffe Meet & Greet",
+        subTitle: "Family Fun",
+        desc: "Feed and interact with our friendly giraffes. A perfect photo opportunity!",
+        date: "Sep 25, 2025",
+        video: "https://www.pexels.com/download/video/7008029/",
+    },
+    {
+        id: 4,
+        title: "Zoo Funfair & Carnival 🎪",
+        subTitle: "Stalls, Rides & Games",
+        desc: "A full-day festival with food stalls, rides, live music, and clowns!",
+        date: "Oct 5, 2025",
+        video: "https://www.pexels.com/download/video/3116906/",
+    },
+];
+
+export default function EventsCarousel() {
+    return (
+        <div className="w-full ">
+            <Swiper
+                modules={[Autoplay, Pagination, Scrollbar, A11y]}
+                spaceBetween={50}
+                slidesPerView={1}
+                loop={true}
+                autoplay={{
+                    delay: 6000,
+                    disableOnInteraction: false,
+                }}
+                pagination={{ clickable: true }}
+                scrollbar={{ draggable: true }}
+            >
+                {events.map((event) => (
+                    <SwiperSlide key={event.id}>
+                        <div className="relative md:h-[730px] h-[560px]">
+                            {/* 🔥 Video instead of image */}
+                            <video
+                                src={event.video}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className="w-full h-[560px] md:h-[730px] object-cover"
+                            ></video>
+
+                            {/* Overlay */}
+                            <div className="absolute top-0 left-0 w-full h-full bg-black/60 flex flex-col justify-center items-center text-white text-center px-4">
+                                <h1 className="md:text-5xl text-3xl font-bold md:mt-14">
+                                    {event.title}{" "}
+                                    <span className="text-[#0da70d]">{event.subTitle}</span>
+                                </h1>
+                                <p className="md:text-2xl md:mt-8 font-serif mt-4 max-w-[900px]">
+                                    {event.desc}
+                                </p>
+                                <p className="text-lg mt-4 text-[#fdc500] font-semibold">{event.date}</p>
+                                <div className="flex flex-row gap-3 mt-7 md:mt-10 items-center">
+                                    <Link
+                                        to="/tickets"
+                                        className="bg-[#0da70d] px-3 py-3 md:px-5 md:py-3 rounded-full font-semibold transition-all text-[14px] duration-700 hover:scale-110 hover:bg-[#0b750b]"
+                                    >
+                                        Get Tickets
+                                    </Link>
+                                    <Link
+                                        to="/contact"
+                                        className="border-2 border-white px-3 py-3 md:px-5 md:py-3 rounded-full hover:bg-white hover:text-black font-semibold text-[14px] transition-all duration-700 hover:scale-110"
+                                    >
+                                        Contact Us
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
+    );
+}

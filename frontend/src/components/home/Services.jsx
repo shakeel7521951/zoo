@@ -74,36 +74,50 @@ const Services = () => {
   ]
 
   const ServiceCard = ({ service, side }) => (
+   <div
+  data-aos={service.aos}
+  data-aos-duration='1000'
+  className={`
+    w-full sm:w-full lg:w-[400px] group bg-white relative rounded-lg lg:rounded-xl p-5 shadow-md border border-gray-100
+    transition-all duration-500 ease-in-out transform hover:-translate-y-2
+    ${service.position} ${side === 'left' ? 'lg:rounded-r-full' : 'lg:rounded-l-full'}
+    hover:bg-gradient-to-r hover:from-green-900 hover:via-green-900 hover:to-[#fdc500] 
+    hover:shadow-[inset_0_0_25px_rgba(34,197,94,0.4)]
+  `}
+>
+  <div className="flex items-center space-x-4 mb-2">
+    {/* Icon wrapper */}
     <div
-      data-aos={service.aos}
-      data-aos-duration='1000'
-      className={`
-        w-full sm:w-full lg:w-[400px] group bg-white relative rounded-lg lg:rounded-xl p-5 shadow-md border border-gray-100
-        transition-all duration-500 ease-in-out transform hover:-translate-y-2
-        ${service.position} ${
-        side === 'left' ? 'lg:rounded-r-full' : 'lg:rounded-l-full'
-      }
-        hover:bg-green-50 hover:shadow-[inset_0_0_25px_rgba(34,197,94,0.4)]
-      `}
+      className="
+        bg-green-100 p-3 rounded-full transition-all duration-500 ease-in-out 
+        group-hover:bg-gradient-to-r group-hover:from-green-900 group-hover:to-[#fdc500]
+        group-hover:shadow-[0_0_20px_rgba(253,197,0,0.6)]
+      "
     >
-      <div className='flex items-center space-x-4 mb-2'>
-        <div
-          className='bg-green-100 p-3 rounded-full transition-all duration-500 ease-in-out 
-          group-hover:bg-green-600 group-hover:shadow-[0_0_15px_rgba(34,197,94,0.6)]'
-        >
-          <service.icon className='text-green-700 text-xl transition-all duration-500 ease-in-out group-hover:text-white' />
-        </div>
-        <h2 className='text-lg font-semibold text-green-900 transition-all duration-500 ease-in-out group-hover:text-green-700'>
-          {service.title}
-        </h2>
-      </div>
-      <p
-        className={`text-gray-600 transition-all duration-500 ease-in-out group-hover:text-gray-800
-          ${side === 'right' ? 'lg:pl-10 sm:pl-0' : 'lg:pr-10 sm:pr-0'}`}
-      >
-        {service.desc}
-      </p>
+      <service.icon className="text-green-700 text-xl transition-all duration-500 ease-in-out group-hover:text-white" />
     </div>
+
+    {/* Title */}
+    <h2
+      className="
+        text-lg font-semibold text-green-900 transition-all duration-500 ease-in-out 
+        group-hover:text-[#fdc500]
+      "
+    >
+      {service.title}
+    </h2>
+  </div>
+
+  {/* Description */}
+  <p
+    className={`text-gray-600 transition-all duration-500 ease-in-out group-hover:text-white
+      ${side === 'right' ? 'lg:pl-10 sm:pl-0' : 'lg:pr-10 sm:pr-0'}
+    `}
+  >
+    {service.desc}
+  </p>
+</div>
+
   )
 
   return (
