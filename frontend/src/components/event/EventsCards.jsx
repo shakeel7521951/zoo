@@ -5,14 +5,25 @@ import lion from "../../assets/EventsImages/lion.jpg";
 import penguin3 from "../../assets/EventsImages/penguin3.avif";
 import funfair from "../../assets/EventsImages/funfair.jpg";
 import giraffe from "../../assets/EventsImages/giraffe.jpg";
+import Model from "../common/Model";
+import birdWatching from "../../assets/EventsImages/birdWatching.webp"
+import train from "../../assets/EventsImages/train.jpg"
+import museum from "../../assets/EventsImages/museum.jpg"
+import baladna from "../../assets/EventsImages/baladna.jpg"
+import panda from "../../assets/EventsImages/panda.webp"
+
 
 export default function EventsCards() {
+
   const upcomingEvent = {
     title: "Zoo Funfair & Carnival 🎪",
     subTitle: "2025",
     desc: "Join us for a full day of fun rides, animal shows, food stalls, and live performances!",
     date: "2025-10-05T10:00:00",
   };
+
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const allEvents = [
     {
@@ -51,7 +62,54 @@ export default function EventsCards() {
       category: "Carnivals",
       image: funfair,
     },
+    {
+      id: 5,
+      title: "Aviary Bird Watching",
+      subTitle: "Al Khor Park",
+      desc: "Explore an expansive aviary featuring peacocks, lovebirds, flamingos, parrots, and geese—a birdwatcher’s paradise!",
+      date: "Oct 10, 2025",
+      category: "Animal Encounters",
+      image: birdWatching,
+    },
+    {
+      id: 6,
+      title: "Miniature Train Ride",
+      subTitle: "Family Fun",
+      desc: "Ride through beautiful green landscapes of Al Khor Park & Zoo on a charming mini train—perfect for families.",
+      date: "Oct 12, 2025",
+      category: "Family Activities",
+      image: train,
+    },
+    {
+      id: 7,
+      title: "Zoo Museum Tour",
+      subTitle: "Educational Exhibit",
+      desc: "Tour the on-site museum at Al Khor Park to learn about local wildlife, conservation efforts, and the region’s ecosystem.",
+      date: "Oct 15, 2025",
+      category: "Educational",
+      image: museum,
+    },
+    {
+      id: 8,
+      title: "Baladna Farm Adventure",
+      subTitle: "Animal Farm Experience",
+      desc: "Visit Baladna Park to meet cows, emus, wallabies, peacocks, and enjoy activities like ziplining, go-karts, and archery.",
+      date: "Oct 20, 2025",
+      category: "Outdoor Adventure",
+      image: baladna,
+    },
+    {
+      id: 9,
+      title: "Panda House Visit",
+      subTitle: "Special Exhibit",
+      desc: "Meet Suhail & Thuraya, Qatar’s first giant pandas at Al Khor—an exclusive and unforgettable experience.",
+      date: "Oct 25, 2025",
+      category: "Special Exhibits",
+      image: panda,
+    },
+
   ];
+
 
   const categories = ["All", "Shows", "Animal Encounters", "Carnivals"];
   const [activeCategory, setActiveCategory] = useState("All");
@@ -91,16 +149,16 @@ export default function EventsCards() {
         <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2Utb3BhY2l0eT0iMC4zIj48cGF0aCBkPSJNMzAgMTVjLTguMjg0IDAtMTUgNi43MTYtMTUgMTVzNi43MTYgMTUgMTUgMTUgMTUtNi43MTYgMTUtMTUtNi43MTYtMTUtMTUtMTV6Ii8+PHBhdGggZD0iTTMwIDIwYy01LjUyMyAwLTEwIDQuNDc3LTEwIDEwczQuNDc3IDEwIDEwIDEwIDEwLTQuNDc3IDEwLTEwLTQuNDc3LTEwLTEwLTEweiIvPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjUiLz48L2c+PC9zdmc+')]"></div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-2 sm:px-4">
-          <span className="inline-block bg-amber-400 text-emerald-900 px-3 py-1 rounded-full text-xs sm:text-sm font-bold mb-2 animate-bounce">
+          <span className="inline-block bg-amber-400 text-emerald-900 px-3 py-1 rounded-full text-xs sm:text-sm font-bold mb-2 animate-bounce" data-aos="fade-down">
             UPCOMING EVENT
           </span>
-          <h1 className="text-3xl sm:text-5xl font-bold mb-3">
+          <h1 className="text-3xl sm:text-5xl font-bold mb-3" data-aos="fade-down">
             {upcomingEvent.title} <span className="text-amber-300">{upcomingEvent.subTitle}</span>
           </h1>
-          <p className="text-sm sm:text-lg text-emerald-100 mb-5">{upcomingEvent.desc}</p>
+          <p className="text-sm sm:text-lg text-emerald-100 mb-5" data-aos="zoom-in">{upcomingEvent.desc}</p>
 
           {/* Countdown */}
-          <div className="flex justify-center gap-2 sm:gap-4 flex-wrap mb-6">
+          <div className="flex justify-center gap-2 sm:gap-4 flex-wrap mb-6" data-aos="fade-up">
             {Object.entries(timeLeft).map(([unit, value]) => (
               <div key={unit} className="bg-white/15 backdrop-blur-sm px-3 py-2 rounded-lg shadow-lg min-w-[60px] sm:min-w-[70px] border border-white/20">
                 <p className="text-lg sm:text-2xl font-bold">{value}</p>
@@ -109,24 +167,26 @@ export default function EventsCards() {
             ))}
           </div>
 
-          <button className="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-emerald-900 px-5 sm:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-lg font-bold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+          <button className="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-emerald-900 px-5 sm:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-lg font-bold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl" data-aos="zoom-out">
             Get Tickets Now
           </button>
         </div>
       </div>
 
       {/* Filter Bar */}
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 -mt-6 sm:-mt-8 relative z-20">
-        <div className="bg-white rounded-xl shadow-lg p-3 sm:p-4 flex justify-center gap-2 sm:gap-3 flex-wrap">
+      <div className="md:w-full  mx-auto px-3 sm:px-4 mt-6 sm:mt-8 relative z-20">
+        <div
+          className=" rounded-xl  p-3 sm:p-4 flex justify-center gap-2 sm:gap-3 flex-wrap"
+          data-aos="zoom-in"
+        >
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => handleFilter(cat)}
-              className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-base font-semibold transition-all duration-300 ${
-                activeCategory === cat
-                  ? "bg-green-900 text-white shadow-md"
-                  : "bg-emerald-100 text-emerald-900 hover:bg-emerald-200"
-              }`}
+              className={`px-3 sm:px-5 shadow-lg border py-2 sm:py-2.5 rounded-full text-xs sm:text-base font-semibold transition-all duration-300 ${activeCategory === cat
+                ? "bg-green-900 text-white shadow-md"
+                : "bg-transparent text-emerald-900 hover:bg-emerald-200"
+                }`}
             >
               {cat}
             </button>
@@ -134,66 +194,106 @@ export default function EventsCards() {
         </div>
       </div>
 
-      {/* Events Grid */}
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 mt-12 sm:mt-16">
-        <h2 className="text-2xl sm:text-3xl font-bold text-green-800 text-center mb-8 sm:mb-12">
+
+      <div className="max-w-[1450px] mx-auto px-2 sm:px-3 mt-12 sm:mt-16">
+        <h2
+          className="text-2xl sm:text-5xl font-bold text-green-800 text-center mb-8 sm:mb-12"
+          data-aos="fade-up"
+        >
           Our <span className="text-amber-500">Exciting Events</span>
         </h2>
 
         {filteredEvents.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-emerald-700 text-lg">No events found in this category.</p>
+            <p className="text-emerald-700 text-lg">
+              No events found in this category.
+            </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-12">
             {filteredEvents.map((event) => (
               <div
                 key={event.id}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group border border-emerald-100"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group border border-emerald-100" data-aos="fade-up"
               >
                 {/* Image */}
                 <div className="relative h-48 sm:h-56 overflow-hidden">
-                  <img src={event.image} alt={event.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
                   <div className="absolute top-3 right-3 bg-emerald-600 text-white px-2 py-1 rounded-full text-[10px] sm:text-xs font-semibold uppercase">
                     {event.category}
                   </div>
                   <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-3 left-3 text-white">
-                    <span className="text-amber-300 text-sm font-bold">{event.date}</span>
+                    <span className="text-amber-300 text-sm font-bold">
+                      {event.date}
+                    </span>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-4 sm:p-6">
+                <div className="py-4 sm:py-5 px-3 sm:px-4">
                   <h3 className="text-xl sm:text-2xl font-bold text-green-900 mb-1 group-hover:text-emerald-700 transition-colors">
                     {event.title}
                   </h3>
-                  <p className="text-green-600 text-xs sm:text-sm mb-2">{event.subTitle}</p>
-                  <p className="text-gray-600 text-sm sm:text-base mb-4">{event.desc}</p>
+                  <p className="text-green-600 text-xs sm:text-sm mb-2">
+                    {event.subTitle}
+                  </p>
+                  <p className="text-gray-600 text-sm sm:text-base mb-4">
+                    {event.desc}
+                  </p>
 
                   <div className="flex justify-between items-center">
-                    <Link
-                      to="/tickets"
+                    <button
+                      onClick={() => setIsOpen(true)}
                       className="bg-green-900 hover:bg-emerald-700 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-base font-medium transition-all duration-300 hover:shadow-md flex items-center"
                     >
                       Get Tickets
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-3 w-3 sm:h-4 sm:w-4 ml-2"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        />
                       </svg>
-                    </Link>
+                    </button>
                     <span className="text-xs sm:text-sm text-gray-500 flex items-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-3 w-3 sm:h-4 sm:w-4 mr-1"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
                       </svg>
                       2 hours
                     </span>
                   </div>
                 </div>
+
               </div>
             ))}
           </div>
         )}
       </div>
+
+      <Model isOpen={isOpen} onClose={() => setIsOpen(false)}></Model>
     </div>
   );
 }

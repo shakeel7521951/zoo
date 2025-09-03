@@ -3,6 +3,7 @@ import { FaPaw, FaTicketAlt, FaTimes, FaBars, FaChevronDown, FaChevronUp } from 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
 const Model = ({isOpen,onClose}) => {
     if(!isOpen) return
       
