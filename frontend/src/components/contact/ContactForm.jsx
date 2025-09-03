@@ -204,7 +204,7 @@ export default function ContactForm() {
                   <div>
                     <h3 className="font-medium text-black">{item.title}</h3>
                     <p className="text-sm sm:text-base text-[#55af7e]">{item.info}</p>
-                    <p className="text-xs sm:text-sm text-yellow-400 mt-1">{item.details}</p>
+                    <p className="text-xs sm:text-sm text-yellow-500 mt-1">{item.details}</p>
                   </div>
                 </li>
               ))}
@@ -249,7 +249,7 @@ export default function ContactForm() {
                     <item.icon className="text-[#F2EDE9] text-base sm:text-lg" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-black group-hover:text-yellow-400 transition-colors duration-300">
+                    <h3 className="font-medium text-black group-hover:text-yellow-500 transition-colors duration-300">
                       {item.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-[#55af7e] group-hover:text-white transition-colors duration-300">

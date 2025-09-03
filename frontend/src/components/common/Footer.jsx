@@ -18,7 +18,7 @@ const Footer = () => {
       <div className="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-30"></div>
       
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
         {/* Animated paw prints decoration */}
         <div className="absolute -top-4 -left-4 opacity-10" data-aos="fade-right">
           <FaPaw className="h-16 w-16 text-yellow-400 transform rotate-45" />
