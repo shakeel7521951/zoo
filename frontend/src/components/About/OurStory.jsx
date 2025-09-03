@@ -5,25 +5,19 @@ import { Calendar, Target, Heart, Zap, ChevronRight, Users } from "lucide-react"
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Color mapping for Tailwind
+// Brand color mapping
 const colorMap = {
-  emerald: {
-    border: "border-emerald-500",
-    bg: "bg-gradient-to-r from-emerald-100 to-emerald-200",
-    text: "text-emerald-700 hover:text-emerald-900",
-    badge: "from-emerald-100 to-emerald-200 text-emerald-900",
+  gold: {
+    border: "border-[#fdc500]",
+    bg: "bg-gradient-to-r from-[#fdc500]/20 to-[#064e3b]/20",
+    text: "text-[#064e3b] hover:text-[#fdc500]",
+    badge: "from-[#fdc500] to-[#064e3b] text-white",
   },
-  blue: {
-    border: "border-blue-500",
-    bg: "bg-gradient-to-r from-blue-100 to-blue-200",
-    text: "text-blue-700 hover:text-blue-900",
-    badge: "from-blue-100 to-blue-200 text-blue-900",
-  },
-  amber: {
-    border: "border-amber-500",
-    bg: "bg-gradient-to-r from-amber-100 to-amber-200",
-    text: "text-amber-700 hover:text-amber-900",
-    badge: "from-amber-100 to-amber-200 text-amber-900",
+  green: {
+    border: "border-[#064e3b]",
+    bg: "bg-gradient-to-r from-[#064e3b]/20 to-[#fdc500]/20",
+    text: "text-[#064e3b] hover:text-[#fdc500]",
+    badge: "from-[#064e3b] to-[#fdc500] text-white",
   },
 };
 
@@ -31,10 +25,10 @@ const colorMap = {
 function SectionTitle({ title, subtitle }) {
   return (
     <div className="text-center mb-16 sm:mb-20" data-aos="fade-up">
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-[#064e3b] tracking-tight">
         {title}
       </h2>
-      <p className="text-base sm:text-lg text-slate-600 mt-4 max-w-2xl mx-auto">
+      <p className="text-base sm:text-lg text-[#064e3b]/70 mt-4 max-w-2xl mx-auto">
         {subtitle}
       </p>
     </div>
@@ -48,21 +42,21 @@ const timeline = [
     title: "NY Zoo Opens",
     text: "Founded with 40 species and a bold vision for urban conservation.",
     icon: <Heart className="w-6 h-6" />,
-    color: "emerald",
+    color: "green",
   },
   {
     year: "2016",
     title: "Wildlife Rescue Program",
     text: "Expanded rehabilitation facilities for injured native animals.",
     icon: <Target className="w-6 h-6" />,
-    color: "blue",
+    color: "gold",
   },
   {
     year: "2024",
     title: "Net-Zero Initiative",
     text: "Committed to renewable energy and zero-waste operations by 2030.",
     icon: <Zap className="w-6 h-6" />,
-    color: "amber",
+    color: "gold",
   },
 ];
 
@@ -72,7 +66,7 @@ function OurStory() {
   }, []);
 
   return (
-    <section className=" sm:py-24 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
+    <section className="sm:py-24 bg-gradient-to-b from-white to-[#fdc500]/10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <SectionTitle
@@ -83,7 +77,7 @@ function OurStory() {
         {/* Timeline */}
         <div className="relative max-w-5xl mx-auto">
           {/* Vertical Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-[3px] bg-gradient-to-b from-emerald-300 via-emerald-200 to-transparent transform -translate-x-1/2" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#064e3b]/40 via-[#fdc500]/40 to-transparent transform -translate-x-1/2" />
           <div className="space-y-20 sm:space-y-24">
             {timeline.map((event, i) => {
               const colors = colorMap[event.color];
@@ -97,6 +91,7 @@ function OurStory() {
                   className={`relative flex flex-col md:flex-row items-center ${
                     i % 2 === 0 ? "md:flex-row-reverse" : ""
                   }`}
+                  data-aos="fade-up"
                 >
                   {/* Connector Dot */}
                   <motion.div
@@ -132,10 +127,10 @@ function OurStory() {
                         {event.icon}
                       </div>
 
-                      <h4 className="text-lg sm:text-xl font-bold text-slate-900 mt-6">
+                      <h4 className="text-lg sm:text-xl font-bold text-[#064e3b] mt-6">
                         {event.title}
                       </h4>
-                      <p className="mt-3 text-slate-600 text-sm sm:text-base">
+                      <p className="mt-3 text-[#064e3b]/70 text-sm sm:text-base">
                         {event.text}
                       </p>
                       <button
@@ -158,19 +153,20 @@ function OurStory() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="mt-24 sm:mt-32 relative rounded-3xl overflow-hidden shadow-2xl"
+          data-aos="fade-up"
         >
           {/* Background Image */}
-        <div
-  className="absolute inset-0 bg-cover bg-center h-screen"
-  style={{
-    backgroundImage:
-      "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBobenVgW1aqhB8_Ck1NcozmaEJ-009Pe7Dg&s')",
-  }}
-></div>
-
+          <div
+            className="absolute inset-0 bg-cover bg-center h-screen"
+            style={{
+              backgroundImage:
+                "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBobenVgW1aqhB8_Ck1NcozmaEJ-009Pe7Dg&s')",
+            }}
+          />
 
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-[#064e3b]/70" />
+
           {/* Content */}
           <div className="relative z-10 p-8 sm:p-12 text-center text-white">
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 drop-shadow-md">
@@ -181,68 +177,12 @@ function OurStory() {
               programs, and designing sustainable habitats to protect wildlife
               for generations.
             </p>
-            <button className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-emerald-700 font-semibold rounded-xl shadow-lg hover:bg-slate-100 transition-colors duration-300">
+            <button className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-[#fdc500] text-[#064e3b] font-semibold rounded-xl shadow-lg hover:bg-[#064e3b] hover:text-[#fdc500] transition-colors duration-300">
               Support Our Mission
               <Heart className="w-5 h-5 ml-2" />
             </button>
           </div>
         </motion.div>
-
-        {/* Stats Section */}
-        <div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 mt-20 sm:mt-28"
-          data-aos="fade-up"
-        >
-          {[
-            {
-              value: "37",
-              label: "Years of Service",
-              icon: <Calendar className="w-6 h-6 sm:w-7 sm:h-7" />,
-              bgImage:
-                "https://images.pexels.com/photos/20787/pexels-photo.jpg",
-            },
-            {
-              value: "200+",
-              label: "Animal Species",
-              icon: <Heart className="w-6 h-6 sm:w-7 sm:h-7" />,
-              bgImage:
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAQSUGcKXtDohjvnLLLV-yrggz_PoaMAk4VQ&s",
-            },
-            {
-              value: "1M+",
-              label: "Visitors Annually",
-              icon: <Users className="w-6 h-6 sm:w-7 sm:h-7" />,
-              bgImage:
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK9F1zUwb4LmFVQJIg-iJKHbBUGuusbia72g&s",
-            },
-          ].map((stat, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.05 }}
-              className="relative rounded-2xl text-center shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 p-8 sm:p-10"
-            >
-              {/* Background Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center shadow-lg"
-                style={{ backgroundImage: `url('${stat.bgImage}')` }}
-              />
-              {/* Dark overlay */}
-              <div className="absolute inset-0 bg-black/40" />
-              {/* Content */}
-              <div className="relative z-10">
-                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white/20 rounded-xl mb-4 mx-auto">
-                  {stat.icon}
-                </div>
-                <div className="text-3xl sm:text-4xl font-extrabold text-white mb-1 sm:mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-white/90 font-medium text-sm sm:text-base">
-                  {stat.label}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

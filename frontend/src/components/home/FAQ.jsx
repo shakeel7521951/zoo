@@ -86,7 +86,7 @@ const FAQSection = () => {
 
           {/* Right Side - Image */}
           <div
-            className="relative w-full h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl"
+            className="relative w-full h-[500px] md:h-[700px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl"
             data-aos="fade-left"
           >
             <img

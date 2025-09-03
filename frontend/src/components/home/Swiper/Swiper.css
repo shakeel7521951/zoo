@@ -18,7 +18,7 @@
 }
 
 .swiper-pagination-bullet {
-  background: linear-gradient(to bottom, #14532d 70%, #fdc500 100%) !important;
+  background: linear-gradient(to bottom, #14532d 40%, #fdc500 100%) !important;
   opacity: 0.5;
   width: 13px;
   height: 13px;

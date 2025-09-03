@@ -1,30 +1,33 @@
-        import { Swiper, SwiperSlide } from 'swiper/react'
-        import { Navigation, Pagination, Autoplay } from 'swiper/modules'
-        import { FaTicketAlt, FaInfoCircle } from 'react-icons/fa'
-        import 'swiper/css'
-        import 'swiper/css/navigation'
-        import 'swiper/css/pagination'
-        import './Swiper.css'
-        import { Link } from 'react-router-dom'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import { FaTicketAlt, FaInfoCircle } from 'react-icons/fa'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import './Swiper.css'
+import { Link } from 'react-router-dom'
+import Model from '../../common/Model'
+import { useState } from 'react'
 
-        const VideoSwiper = () => {
-          const slides = [
-            {
-              video: './videos/tiger.mp4',
-              title: 'Roar with the Tigers',
-              text: 'Step into the wild and feel the roar of our magnificent tigers.'
-            },
-            {
-              video: './videos/giraffe.mp4',
-              title: 'Grace with Giraffes',
-              text: 'Discover the tallest animals on Earth and watch giraffes roam elegantly.'
-            },
-            {
-              video: './videos/flamingo.mp4',
-              title: 'Graceful Flamingos',
-              text: 'Marvel at the elegance of our vibrant flamingo sanctuary.'
-            }
-          ]
+const VideoSwiper = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const slides = [
+    {
+      video: './videos/tiger.mp4',
+      title: 'Roar with the Tigers',
+      text: 'Step into the wild and feel the roar of our magnificent tigers.'
+    },
+    {
+      video: './videos/giraffe.mp4',
+      title: 'Grace with Giraffes',
+      text: 'Discover the tallest animals on Earth and watch giraffes roam elegantly.'
+    },
+    {
+      video: './videos/flamingo.mp4',
+      title: 'Graceful Flamingos',
+      text: 'Marvel at the elegance of our vibrant flamingo sanctuary.'
+    }
+  ]
 
   return (
     <div className='relative w-full h-[100vh] custom-swiper overflow-hidden'>
@@ -74,16 +77,21 @@
                 data-aos='fade-up'
                 data-aos-delay='400'
               >
-                <a
-                  href='#tickets'
-                  className='bg-green-900 flex items-center gap-2 px-6 py-3 rounded-lg shadow-lg hover:bg-green-950 transition text-sm md:text-lg'
+                <button
+                onClick={()=>setIsModalOpen(true)}
+                  className='bg-green-900 flex items-center gap-2 px-4 py-2 rounded-lg shadow-lg 
+               hover:bg-green-950 hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.5)] 
+               transition-all duration-300 text-sm md:text-[19px] font-semibold'
                 >
                   <FaTicketAlt /> Buy Tickets
-                </a>
+                </button>
+
 
                 <Link
-                  to="/about"
-                  className='bg-[#fdc700] text-black flex items-center gap-2 px-6 py-3 rounded-lg shadow-lg hover:bg-yellow-400 transition text-sm md:text-lg'
+                  to='/about'
+                  className='bg-[#fdc700] text-black flex items-center gap-2 px-4 py-2 rounded-lg shadow-lg 
+               hover:bg-yellow-400 hover:scale-105 hover:shadow-[0_0_20px_rgba(253,199,0,0.5)] 
+               transition-all duration-300 text-sm md:text-[18px] font-semibold'
                 >
                   <FaInfoCircle /> Explore More
                 </Link>
@@ -92,6 +100,7 @@
           </SwiperSlide>
         ))}
       </Swiper>
+       <Model isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   )
 }
