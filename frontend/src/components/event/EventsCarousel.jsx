@@ -71,10 +71,10 @@ export default function EventsCarousel() {
                             ></video>
 
                             {/* Overlay */}
-                            <div className="absolute top-0 left-0 w-full h-full bg-black/60 flex flex-col justify-center items-center text-white text-center px-4">
-                                <h1 className="md:text-5xl text-3xl font-bold md:mt-14">
+                            <div className="absolute top-0 left-0 w-full h-full bg-black/70 flex flex-col justify-center items-center text-white text-center px-4">
+                                <h1 className="md:text-[50px] text-3xl font-extrabold md:mt-14">
                                     {event.title}{" "}
-                                    <span className="text-[#0da70d]">{event.subTitle}</span>
+                                    <span className="text-green-600">{event.subTitle}</span>
                                 </h1>
                                 <p className="md:text-2xl md:mt-8 font-serif mt-4 max-w-[900px]">
                                     {event.desc}
@@ -83,13 +83,13 @@ export default function EventsCarousel() {
                                 <div className="flex flex-row gap-3 mt-7 md:mt-10 items-center">
                                     <Link
                                         to="/tickets"
-                                        className="bg-[#0da70d] px-3 py-3 md:px-5 md:py-3 rounded-full font-semibold transition-all text-[14px] duration-700 hover:scale-110 hover:bg-[#0b750b]"
+                                        className="bg-green-700 px-3 py-3 md:px-5 md:py-3 rounded-full font-semibold transition-all text-[18px] duration-700 hover:scale-110 hover:bg-[#0b750b]"
                                     >
                                         Get Tickets
                                     </Link>
                                     <Link
                                         to="/contact"
-                                        className="border-2 border-white px-3 py-3 md:px-5 md:py-3 rounded-full hover:bg-white hover:text-black font-semibold text-[14px] transition-all duration-700 hover:scale-110"
+                                        className="border-2 border-white px-3 py-3 md:px-5 md:py-3 rounded-full hover:bg-white hover:text-black font-semibold text-[18px] transition-all duration-700 hover:scale-110"
                                     >
                                         Contact Us
                                     </Link>
