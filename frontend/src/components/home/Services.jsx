@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import {
   FaParking,
   FaCamera,
@@ -8,93 +8,162 @@ import {
   FaWifi,
   FaFutbol,
   FaHotel
-} from "react-icons/fa"
+} from 'react-icons/fa'
 
 const Services = () => {
   const leftServices = [
-    { icon: FaParking, title: "Car Parking", desc: "Safe & spacious parking." },
-    { icon: FaCamera, title: "Animal Photos", desc: "Capture zoo memories." },
-    { icon: FaMapMarkedAlt, title: "Guide Services", desc: "Professional guides available." },
-    { icon: FaUtensils, title: "Food & Beverages", desc: "Delicious meals & drinks." }
+    {
+      icon: FaParking,
+      title: 'Car Parking',
+      desc: 'Safe & spacious parking.',
+      position: 'lg:mr-[-140px]',
+      aos: 'fade-right'
+    },
+    {
+      icon: FaCamera,
+      title: 'Animal Photos',
+      desc: 'Capture zoo memories.',
+      position: 'lg:mr-[-50px]',
+      aos: 'fade-right'
+    },
+    {
+      icon: FaMapMarkedAlt,
+      title: 'Guide Services',
+      desc: 'Professional guides available.',
+      position: 'lg:mr-[-50px]',
+      aos: 'fade-right'
+    },
+    {
+      icon: FaUtensils,
+      title: 'Food & Beverages',
+      desc: 'Delicious meals & drinks.',
+      position: 'lg:mr-[-140px]',
+      aos: 'fade-right'
+    }
   ]
 
   const rightServices = [
-    { icon: FaShoppingBag, title: "Zoo Shopping", desc: "Souvenirs, toys, and more." },
-    { icon: FaWifi, title: "Free Hi-Speed WiFi", desc: "Stay connected anytime." },
-    { icon: FaFutbol, title: "Playground", desc: "Fun play area for children." },
-    { icon: FaHotel, title: "Rest House", desc: "Relax & refresh comfortably." }
+    {
+      icon: FaShoppingBag,
+      title: 'Zoo Shopping',
+      desc: 'Souvenirs, toys, and more.',
+      position: 'lg:ml-[-140px]',
+      aos: 'fade-left'
+    },
+    {
+      icon: FaWifi,
+      title: 'Free Hi-Speed WiFi',
+      desc: 'Stay connected anytime.',
+      position: 'lg:ml-[-50px]',
+      aos: 'fade-left'
+    },
+    {
+      icon: FaFutbol,
+      title: 'Playground',
+      desc: 'Fun play area for children.',
+      position: 'lg:ml-[-50px]',
+      aos: 'fade-left'
+    },
+    {
+      icon: FaHotel,
+      title: 'Rest House',
+      desc: 'Relax & refresh comfortably.',
+      position: 'lg:ml-[-140px]',
+      aos: 'fade-left'
+    }
   ]
 
+  const ServiceCard = ({ service, side }) => (
+   <div
+  data-aos={service.aos}
+  data-aos-duration='1000'
+  className={`
+    w-full sm:w-full lg:w-[400px] group bg-white relative rounded-lg lg:rounded-xl p-5 shadow-md border border-gray-100
+    transition-all duration-500 ease-in-out transform hover:-translate-y-2
+    ${service.position} ${side === 'left' ? 'lg:rounded-r-full' : 'lg:rounded-l-full'}
+    hover:bg-gradient-to-r hover:from-green-900 hover:via-green-900 hover:to-[#fdc500] 
+    hover:shadow-[inset_0_0_25px_rgba(34,197,94,0.4)]
+  `}
+>
+  <div className="flex items-center space-x-4 mb-2">
+    {/* Icon wrapper */}
+    <div
+      className="
+        bg-green-100 p-3 rounded-full transition-all duration-500 ease-in-out 
+        group-hover:bg-gradient-to-r group-hover:from-green-900 group-hover:to-[#fdc500]
+        group-hover:shadow-[0_0_20px_rgba(253,197,0,0.6)]
+      "
+    >
+      <service.icon className="text-green-700 text-xl transition-all duration-500 ease-in-out group-hover:text-white" />
+    </div>
+
+    {/* Title */}
+    <h2
+      className="
+        text-lg font-semibold text-green-900 transition-all duration-500 ease-in-out 
+        group-hover:text-[#fdc500]
+      "
+    >
+      {service.title}
+    </h2>
+  </div>
+
+  {/* Description */}
+  <p
+    className={`text-gray-600 transition-all duration-500 ease-in-out group-hover:text-white
+      ${side === 'right' ? 'lg:pl-10 sm:pl-0' : 'lg:pr-10 sm:pr-0'}
+    `}
+  >
+    {service.desc}
+  </p>
+</div>
+
+  )
+
   return (
-    <div className="w-[100%] bg-gray-50 py-20 px-6 md:px-12 lg:px-20 box-border overflow-hidden">
-      <div className="max-w-7xl mx-auto mb-16">
-        <p className="text-green-700 font-semibold uppercase tracking-wide mb-2">
+    <div className='w-full bg-gray-50 py-20 px-6 md:px-12 lg:px-20 overflow-hidden'>
+      {/* Heading */}
+      <div className='max-w-7xl mx-auto mb-12 text-center lg:text-left'>
+        <p className='text-green-700 font-semibold uppercase tracking-wide mb-2'>
           # Our Services
         </p>
-        <h1 className="text-4xl font-extrabold text-green-900 mb-4">
+        <h1 className='text-4xl font-extrabold text-green-900 mb-4'>
           Explore Our Facilities
         </h1>
-        <p className="text-gray-600 max-w-2xl">
+        <p className='text-gray-600 max-w-2xl mx-auto lg:mx-0'>
           We provide top-notch services to make your visit comfortable,
-          enjoyable, and memorable. From relaxation spots to family fun, we
-          ensure a delightful experience for everyone.
+          enjoyable, and memorable.
         </p>
       </div>
 
       {/* Main Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center max-w-7xl mx-auto">
-        {/* Left Services */}
-        <div data-aos="fade-right" data-aos-delay="1000" className="lg:col-span-4 space-y-6">
-          {leftServices.map((service, i) => (
-            <div
-              key={i}
-              className="group bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:shadow-2xl transition duration-300 hover:-translate-y-1 relative overflow-hidden"
-            >
-              {/* Hover Glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-green-50 to-green-100 opacity-0 group-hover:opacity-100 transition duration-300"></div>
-              <div className="relative flex items-center space-x-4 mb-3">
-                <div className="bg-green-100 p-3 rounded-full group-hover:bg-green-600 transition duration-300">
-                  <service.icon className="text-green-700 text-xl group-hover:text-white" />
-                </div>
-                <h2 className="text-lg font-semibold text-green-900 group-hover:text-green-700 transition">
-                  {service.title}
-                </h2>
-              </div>
-              <p className="text-gray-600 relative">{service.desc}</p>
-            </div>
+      <div className='grid grid-cols-1 lg:grid-cols-12 gap-10 items-center max-w-7xl mx-auto '>
+        {/* Left column */}
+        <div className='lg:col-span-4 md:grid-cols-2 flex flex-col gap-5 items-center lg:items-end'>
+          {leftServices.map((s, i) => (
+            <ServiceCard key={i} service={s} side='left' />
           ))}
         </div>
 
         {/* Center Image */}
-        <div data-aos="zoom-in" className="lg:col-span-4 flex justify-center">
-          <div className="relative w-72 h-72 lg:w-80 lg:h-80">
+        <div
+          data-aos='zoom-in'
+          data-aos-duration='1200'
+          className='lg:col-span-4 flex justify-center'
+        >
+          <div className='relative w-72 h-72 sm:w-72 sm:h-72 md:w-72 md:h-72 lg:w-80 lg:h-80 transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-[0_0_35px_rgba(34,197,94,0.5)] rounded-full'>
             <img
-              src="./images/service.jpg"
-              alt="service"
-              className="w-full h-full rounded-full object-cover shadow-xl border-8 border-white"
+              src='./images/service.jpg'
+              alt='service'
+              className='w-full h-full rounded-full object-cover shadow-xl border-8 border-white'
             />
-            <div className="absolute inset-0 rounded-full bg-gradient-to-t from-green-200/40 via-transparent to-green-50/10 pointer-events-none"></div>
           </div>
         </div>
 
-        {/* Right Services */}
-        <div data-aos="fade-left"  data-aos-delay="1000" className="lg:col-span-4 space-y-6">
-          {rightServices.map((service, i) => (
-            <div
-              key={i}
-              className="group bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:shadow-2xl transition duration-300 hover:-translate-y-1 relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-green-50 to-green-100 opacity-0 group-hover:opacity-100 transition duration-300"></div>
-              <div className="relative flex items-center space-x-4 mb-3">
-                <div className="bg-green-100 p-3 rounded-full group-hover:bg-green-600 transition duration-300">
-                  <service.icon className="text-green-700 text-xl group-hover:text-white" />
-                </div>
-                <h2 className="text-lg font-semibold text-green-900 group-hover:text-green-700 transition">
-                  {service.title}
-                </h2>
-              </div>
-              <p className="text-gray-600 relative">{service.desc}</p>
-            </div>
+        {/* Right column */}
+        <div className='lg:col-span-4 flex flex-col gap-5 items-center lg:items-start'>
+          {rightServices.map((s, i) => (
+            <ServiceCard key={i} service={s} side='right' />
           ))}
         </div>
       </div>

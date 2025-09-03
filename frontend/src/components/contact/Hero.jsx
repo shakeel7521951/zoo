@@ -23,15 +23,14 @@ export default function Hero() {
     <section
       className="relative min-h-screen w-full flex items-center justify-center text-center text-white px-6 overflow-hidden pt-12"
       style={{
-        backgroundImage:
-          "url('./contact/hero1.avif')",
+        backgroundImage: "url('./contact/hero1.avif')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
       }}
     >
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1B4332]/70 via-[#1B4332]/50 to-[#081C15]/70"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1B4332]/40 via-[#1B4332]/50 to-[#081C15]/40"></div>
 
       {/* Pattern overlay */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0zMCAzMGEyMCAyMCAwIDExLTQwIDAgMjAgMjAgMCAwMTQwIDB6IiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIGZpbGw9Im5vbmUiLz48L3N2Zz4=')] opacity-30 mix-blend-soft-light"></div>
@@ -111,7 +110,7 @@ export default function Hero() {
           {/* Primary Button */}
           <button
             type="button"
-            className="relative bg-gradient-to-r from-[#1B4332] to-[#2D6A4F] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden flex items-center"
+            className="relative bg-green-900 hover:bg-green-950 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden flex items-center"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#2D6A4F] to-[#1B4332] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <span className="relative z-10 whitespace-nowrap flex items-center">
@@ -136,7 +135,7 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
             {
               number: "200+",
@@ -191,3 +190,4 @@ export default function Hero() {
     </section>
   );
 }
+

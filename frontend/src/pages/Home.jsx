@@ -4,18 +4,22 @@ import AboutZoo from '../components/home/About'
 import Services from '../components/home/Services'
 import ZooFacts from '../components/home/ZooFacts'
 import ZooGallery from '../components/home/Gallery'
-import Contact from '../components/home/Contact'
+import TestimonialSwiper from '../components/home/Testimonial'
+import FAQSection from '../components/home/FAQ'
 
 
 const Home = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <VideoSwiper/>
       <AboutZoo/>
       <Services/>
       <ZooFacts/>
       <ZooGallery/>
-      <Contact/>
+      <TestimonialSwiper/>
+      <FAQSection/>
+     
+
     </div>
   )
 }

@@ -1,14 +1,16 @@
 import React from 'react'
 import 'aos/dist/aos.css'
 import { FaLeaf } from 'react-icons/fa' // Leaf icon
-
+import { Link } from 'react-router-dom'
 const AboutZoo = () => {
   return (
-    <div className='w-[100%] mx-auto py-16 px-14 box-border relative overflow-x-hidden '>
-      <p className='text-lg tracking-wide text-green-700 font-semibold mb-2'>
-        <span className='mr-2'>#</span>Welcome To Zoofari
+    <div className='w-full mx-auto py-16 px-6 md:px-10 lg:px-14 box-border relative'>
+      {/* Section Title */}
+      <p className='text-lg tracking-wide text-green-700 font-semibold mb-6 text-center lg:text-left'>
+        <span className='mr-2'>#</span>Welcome To CityZoo
       </p>
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative'>
+
+      <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative overflow-hidden'>
         {/* Left Image */}
         <div
           data-aos='fade-right'
@@ -16,7 +18,7 @@ const AboutZoo = () => {
           className='relative flex justify-center'
         >
           <img
-            className='w-full max-w-3xl rounded-2xl shadow-lg object-cover'
+            className='w-full max-w-4xl rounded-2xl shadow-lg object-cover'
             src='./images/zebra.jpg'
             alt='Zoo'
           />
@@ -26,19 +28,25 @@ const AboutZoo = () => {
         <div
           data-aos='fade-left'
           data-aos-delay='400'
-          className='relative lg:-ml-[69px]  bg-green-900 text-white p-10 rounded-2xl shadow-xl z-10'
+          className='relative bg-green-900 text-white 
+  p-6 sm:p-8 md:p-10 
+  rounded-2xl shadow-xl z-10 
+  max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-none 
+  mx-auto lg:-ml-[67px]'
         >
-          {/* White Frame Border */}
-          <div className='absolute inset-0 border-4 border-white rounded-2xl -z-10'></div>
+          {/* Gradient Frame Border */}
+          <div className='absolute inset-0 rounded-2xl -z-10 p-[4px] bg-gradient-to-r from-green-900 to-[#fdc500]'>
+            <div className='w-full h-full bg-green-900 rounded-2xl'></div>
+          </div>
 
           {/* Title */}
-          <h1 className='text-3xl md:text-4xl font-extrabold mb-4 text-center lg:text-left'>
+          <h1 className='text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 text-center lg:text-left'>
             Why You Should Visit Zoofari Park!
           </h1>
 
           {/* Description */}
-          <p className='text-white/90 mb-6 leading-relaxed text-center lg:text-left'>
-            At Zoofari, we are dedicated to creating a space where people of all
+          <p className='text-white/90 mb-6 leading-relaxed text-sm sm:text-base md:text-lg text-center lg:text-left'>
+            At CityZoo, we are dedicated to creating a space where people of all
             ages can connect with nature and wildlife. Our mission is to provide
             not only entertainment but also education and awareness about animal
             care and conservation. With exciting exhibits, safe family
@@ -47,28 +55,28 @@ const AboutZoo = () => {
           </p>
 
           {/* Features */}
-          <div className='space-y-4'>
-            <h5 className='flex items-center text-lg'>
-              <FaLeaf className='text-white mr-3' /> 180 acres area covered
+          <div className=' hidden lg:flex lg:flex-col'>
+            <h5 className='flex items-center'>
+              <FaLeaf className='text-[#fdc500] mr-3' /> 180 acres area covered
             </h5>
-            <h5 className='flex items-center text-lg'>
-              <FaLeaf className='text-white mr-3' /> More Than 100 Types of
+            <h5 className='flex items-center'>
+              <FaLeaf className='text-[#fdc500] mr-3' /> More Than 100 Types of
               Animals
             </h5>
-            <h5 className='flex items-center text-lg'>
-              <FaLeaf className='text-white mr-3' /> All Animals are Under
+            <h5 className='flex items-center'>
+              <FaLeaf className='text-[#fdc500] mr-3' /> All Animals are Under
               Security
             </h5>
           </div>
 
           {/* Button */}
-          <div className='mt-8 text-center lg:text-left'>
-            <a
-              href='#'
-              className='inline-block bg-white text-green-900 font-semibold px-8 py-3 rounded-full shadow-md hover:bg-green-100 transition transform hover:-translate-y-1'
+          <div className='mt-6 text-center lg:text-left'>
+            <Link
+              to="/about"
+              className='inline-block bg-gradient-to-b from-green-900 to-[#fdc500] text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full shadow-md transition transform hover:-translate-y-1 hover:shadow-[0_0_15px_#fdc500]'
             >
               Read More
-            </a>
+            </Link>
           </div>
         </div>
       </div>

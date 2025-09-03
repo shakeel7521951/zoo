@@ -1,24 +1,24 @@
 .swiper-button-next,
 .swiper-button-prev {
-  width: 60px;                  
+  width: 60px;
   height: 60px;
-  border-radius: 50%;      
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.295);
+  background-color: rgba(240, 220, 220, 0.322);
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  font-size: 20px;     
-  color: #08331a;
-  font-weight: bold;      
+  font-size: 20px;
+  color: #fdc500;
+  font-weight: bold;
 }
 
- .swiper-pagination-bullet {
-  background:white!important ;
+.swiper-pagination-bullet {
+  background: linear-gradient(to bottom, #14532d 70%, #fdc500 100%) !important;
   opacity: 0.5;
   width: 13px;
   height: 13px;
@@ -26,7 +26,8 @@
   transition: all 0.3s ease;
 }
 
- .swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active {
   opacity: 1;
   width: 24px;
+
 }
