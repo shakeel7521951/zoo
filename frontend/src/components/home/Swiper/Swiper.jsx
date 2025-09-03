@@ -1,31 +1,30 @@
-import React, { useEffect } from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, Autoplay } from 'swiper/modules'
-import { FaTicketAlt, FaInfoCircle } from 'react-icons/fa'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import './Swiper.css'
-import { Link } from 'react-router-dom'
+        import React, { useEffect } from 'react'
+        import { Swiper, SwiperSlide } from 'swiper/react'
+        import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+        import { FaTicketAlt, FaInfoCircle } from 'react-icons/fa'
+        import 'swiper/css'
+        import 'swiper/css/navigation'
+        import 'swiper/css/pagination'
+        import './Swiper.css'
 
-const VideoSwiper = () => {
-  const slides = [
-    {
-      video: './videos/tiger.mp4',
-      title: 'Roar with the Tigers',
-      text: 'Step into the wild and feel the roar of our magnificent tigers.'
-    },
-    {
-      video: './videos/giraffe.mp4',
-      title: 'Grace with Giraffes',
-      text: 'Discover the tallest animals on Earth and watch giraffes roam elegantly.'
-    },
-    {
-      video: './videos/flamingo.mp4',
-      title: 'Graceful Flamingos',
-      text: 'Marvel at the elegance of our vibrant flamingo sanctuary.'
-    }
-  ]
+        const VideoSwiper = () => {
+          const slides = [
+            {
+              video: './videos/tiger.mp4',
+              title: 'Roar with the Tigers',
+              text: 'Step into the wild and feel the roar of our magnificent tigers.'
+            },
+            {
+              video: './videos/giraffe.mp4',
+              title: 'Grace with Giraffes',
+              text: 'Discover the tallest animals on Earth and watch giraffes roam elegantly.'
+            },
+            {
+              video: './videos/flamingo.mp4',
+              title: 'Graceful Flamingos',
+              text: 'Marvel at the elegance of our vibrant flamingo sanctuary.'
+            }
+          ]
 
   return (
     <div className='relative w-full h-[100vh] custom-swiper overflow-hidden'>

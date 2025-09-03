@@ -44,14 +44,14 @@ export default function Map() {
         {/* Section Header */}
         <div className="text-center mb-16" data-aos="fade-up">
           <div className="inline-flex items-center justify-center mb-4 relative">
-            <div className="w-16 h-1 bg-gradient-to-r from-transparent to-green-500 mr-4"></div>
-            <span className="text-lg font-semibold tracking-wider text-green-700 uppercase bg-green-100 px-4 py-2 rounded-full shadow-inner flex items-center gap-2">
-              <FaMap className="text-green-600" />
+            <div className="w-16 h-1 bg-gradient-to-r from-transparent to-green-800 mr-4"></div>
+            <span className="text-lg font-semibold tracking-wider text-green-800 uppercase bg-green-100 px-4 py-2 rounded-full shadow-inner flex items-center gap-2">
+              <FaMap className="text-green-700" />
               Zoo Location
             </span>
-            <div className="w-16 h-1 bg-gradient-to-r from-green-500 to-transparent ml-4"></div>
+            <div className="w-16 h-1 bg-gradient-to-r from-green-800 to-transparent ml-4"></div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-emerald-800">
+          <h2 className="text-4xl md:text-5xl font-bold text-green-800 font-serif ">
             Visit Our Wildlife Sanctuary
           </h2>
           <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -85,17 +85,17 @@ export default function Map() {
           <div className="p-8 bg-gradient-to-r from-green-50 to-emerald-50 border-t-2 border-green-200">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
               <div className="flex items-start gap-4">
-                <div className="bg-green-700 p-3 rounded-full shadow-lg mt-1">
+                <div className="bg-gradient-to-r from-[#1B4332] to-[#2D6A4F] p-3 rounded-full shadow-lg mt-1">
                   <FaMapMarkerAlt className="text-white text-xl" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900">Wildlife Zoo Park</h3>
                   <p className="text-gray-600 mt-2 flex items-center gap-2">
-                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                    <span className="w-2 h-2 bg-green-800 rounded-full"></span>
                     123 Wildlife Avenue
                   </p>
                   <p className="text-gray-600 flex items-center gap-2">
-                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                    <span className="w-2 h-2 bg-green-800 rounded-full"></span>
                     Melbourne, VIC 3000
                   </p>
                 </div>
@@ -106,7 +106,7 @@ export default function Map() {
                   href="https://maps.google.com/?q=Melbourne+Zoo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-700 text-white rounded-xl font-semibold hover:from-green-700 hover:to-emerald-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2 group"
+                  className="w-full sm:w-auto px-6 py-3 bg-green-900 hover:bg-green-950 text-white rounded-xl font-semibold  transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2 group"
                 >
                   <FaDirections className="text-yellow-300 group-hover:scale-110 transition-transform duration-300" />
                   Get Directions
@@ -114,9 +114,9 @@ export default function Map() {
 
                 <button
                   onClick={copyAddress}
-                  className="w-full sm:w-auto px-6 py-3 border-2 border-green-600 text-gray-800 rounded-xl font-semibold hover:bg-green-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-center justify-center gap-2 group"
+                  className="w-full sm:w-auto px-6 py-3 border-2 border-green-900 text-gray-800 rounded-xl font-semibold hover:bg-green-900 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-center justify-center gap-2 group"
                 >
-                  <FaCopy className="text-green-600 group-hover:text-white transition-colors duration-300" />
+                  <FaCopy className="text-green-700 group-hover:text-white transition-colors duration-300" />
                   Copy Address
                 </button>
               </div>
@@ -130,10 +130,10 @@ export default function Map() {
               ].map((item, index) => (
                 <div key={index} className="text-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 group hover:-translate-y-1">
                   <div className="flex justify-center mb-2">
-                    <item.icon className="text-2xl text-green-600 group-hover:text-emerald-700 transition-colors duration-300" />
+                    <item.icon className="text-2xl text-green-800 hover:text-green-900 transition-colors duration-300" />
                   </div>
                   <div className="text-sm text-gray-600">{item.label}</div>
-                  <div className="font-semibold text-green-700">{item.value}</div>
+                  <div className="font-semibold text-green-800">{item.value}</div>
                 </div>
               ))}
             </div>
@@ -144,13 +144,13 @@ export default function Map() {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="400">
           <div className="bg-white p-6 rounded-2xl shadow-lg border border-green-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
             <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-              <FaCar className="text-green-600 text-xl" /> By Car
+              <FaCar className="text-green-800 text-xl" /> By Car
             </h3>
             <p className="text-gray-600">Free parking available. Follow signs to Zoo parking area.</p>
           </div>
           <div className="bg-white p-6 rounded-2xl shadow-lg border border-green-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
             <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-              <FaBus className="text-green-600 text-xl" /> Public Transport
+              <FaBus className="text-green-800 text-xl" /> Public Transport
             </h3>
             <p className="text-gray-600">Bus routes 505 and 506 stop right outside the zoo entrance.</p>
           </div>
