@@ -6,7 +6,7 @@
         import 'swiper/css/navigation'
         import 'swiper/css/pagination'
         import './Swiper.css'
-
+        
         const VideoSwiper = () => {
           const slides = [
             {

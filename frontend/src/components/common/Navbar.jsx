@@ -154,7 +154,7 @@ const Navbar = () => {
 
             {/* Header */}
             <div className="flex flex-col items-center text-center mb-8">
-              <div className="flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-green-600 to-emerald-600 shadow-md mb-3">
+              <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#2D6A4F]/100 hover:bg-yellow-400 shadow-md mb-3">
                 <FaPaw className="text-white text-2xl" />
               </div>
               <h2 className="text-3xl font-extrabold text-green-800">
@@ -214,7 +214,7 @@ const Navbar = () => {
 
               <button
                 type="submit"
-                className="w-full py-3 mt-4 bg-gradient-to-r from-green-700 to-emerald-600 text-white text-lg font-bold rounded-xl shadow-lg hover:from-green-800 hover:to-emerald-700 transform hover:-translate-y-1 transition-all duration-300"
+                className="w-full py-3 mt-4 bg-gradient-to-r from-green-800 to-emerald-900 text-white text-lg font-bold rounded-xl shadow-lg hover:from-green-900 hover:to-emerald-800 transform hover:-translate-y-1 transition-all duration-300"
               >
                 Confirm Purchase
               </button>
