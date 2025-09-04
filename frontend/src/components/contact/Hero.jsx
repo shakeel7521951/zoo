@@ -127,7 +127,7 @@ export default function Hero() {
           {[
             {
               number: "200+",
-              label: "Animal Specie",
+              label: "Animal Species",
               icon: FaPaw,
               delay: 600,
             },
@@ -139,7 +139,7 @@ export default function Hero() {
             },
             {
               number: "1M+",
-              label: "Visitors Yearly",
+              label: "Visitors Yearlys",
               icon: FaUser,
               delay: 1000,
             },
