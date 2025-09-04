@@ -252,14 +252,14 @@ Transport: Large crate, sedation recommended`
                 {/* Header */}
                 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 md:gap-6 mb-8 md:mb-10">
                     <div className="max-w-2xl">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">
-                            Curated <span className="text-emerald-600">Wildlife</span> Collection
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900" data-aos="fade-down">
+                            Curated <span className="text-[#0e7a29]">Wildlife</span> Collection
                         </h1>
-                        <p className="mt-2 md:mt-3 text-sm md:text-base text-gray-600">World-class animals for exhibitions, sanctuaries, and premium displays. Pricing listed as estimates — permits & transport extra.</p>
+                        <p className="mt-2 md:mt-3 text-sm md:text-base text-gray-600" data-aos="fade-down">World-class animals for exhibitions, sanctuaries, and premium displays. Pricing listed as estimates — permits & transport extra.</p>
                     </div>
 
                     {/* Search / Filters */}
-                    <div className="w-full lg:w-auto flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
+                    <div className="w-full lg:w-auto flex flex-col sm:flex-row gap-3 items-stretch sm:items-center" data-aos="zoom-in">
                         <div className="relative flex-1">
                             <span className="absolute inset-y-0 left-3 flex items-center text-gray-400">
                                 <FaSearch />
@@ -292,7 +292,7 @@ Transport: Large crate, sedation recommended`
                 </div>
 
                 {/* Grid */}
-                <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
+                <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8" data-aos="fade-up">
                     {filtered.map(product => (
                         <div
                             key={product.id}
@@ -310,7 +310,7 @@ Transport: Large crate, sedation recommended`
                                     <span className="bg-white/80 text-gray-800 px-2 py-1 rounded-full text-xs">
                                         {product.type}
                                     </span>
-                                    <span className="bg-emerald-700 text-white px-2 py-1 rounded-full text-xs">
+                                    <span className="bg-[#085D2D] text-white px-2 py-1 rounded-full text-xs">
                                         {currency(product.price)}
                                     </span>
                                 </div>
@@ -321,15 +321,20 @@ Transport: Large crate, sedation recommended`
                                 <h3 className="text-lg sm:text-xl font-semibold">{product.name}</h3>
                                 <p className="mt-1 text-gray-600 text-sm line-clamp-3">{product.description}</p>
 
-                                <div className="mt-4 flex justify-between items-center">
+                                <div className="mt-4 flex justify-between items-center gap-2 overflow-x-auto">
+                                    {/* View Details Button */}
                                     <button
                                         onClick={() => setSelected(product)}
-                                        className="text-sm text-emerald-600 hover:underline flex items-center gap-1"
+                                        className="text-[10px] sm:text-sm flex items-center gap-1 text-[#085D2D] hover:underline whitespace-nowrap"
                                     >
-                                        <FaInfoCircle className="text-xs" /> View Details
+                                        <FaInfoCircle className="text-xs sm:text-sm" /> View Details
                                     </button>
+
+                                    {/* Cart Buttons */}
                                     <CartButtons product={product} />
                                 </div>
+
+
                             </div>
                         </div>
                     ))}
@@ -362,7 +367,7 @@ Transport: Large crate, sedation recommended`
                                 <div className="flex justify-between items-start mb-4">
                                     <div>
                                         <h2 className="text-xl sm:text-2xl font-bold">{selected.name}</h2>
-                                        <p className="text-emerald-600 text-sm">{selected.origin}</p>
+                                        <p className="text-[#085D2D] text-sm">{selected.origin}</p>
                                         <p className="mt-2 text-sm sm:text-base text-gray-700 italic border-l-4 border-emerald-400 pl-3">
                                             {selected.description}
                                         </p>
@@ -398,7 +403,7 @@ Transport: Large crate, sedation recommended`
 
                                 {/* Footer */}
                                 <div className="mt-5 flex flex-col sm:flex-row gap-2">
-                                    <button className="flex-1 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 text-sm sm:text-base">
+                                    <button className="flex-1 py-2 bg-[#085D2D] text-white rounded-lg hover:bg-emerald-700 text-sm sm:text-base">
                                         Add to Cart
                                     </button>
                                     <button className="flex-1 py-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200 text-sm sm:text-base">

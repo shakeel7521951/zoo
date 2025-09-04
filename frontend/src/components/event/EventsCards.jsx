@@ -16,7 +16,7 @@ import panda from "../../assets/EventsImages/panda.webp"
 export default function EventsCards() {
 
   const upcomingEvent = {
-    title: "Zoo Funfair & Carnival 🎪",
+    title: "Zoo Funfair & Carnival",
     subTitle: "2025",
     desc: "Join us for a full day of fun rides, animal shows, food stalls, and live performances!",
     date: "2025-10-05T10:00:00",
@@ -25,6 +25,7 @@ export default function EventsCards() {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  //events data
   const allEvents = [
     {
       id: 1,
@@ -35,6 +36,7 @@ export default function EventsCards() {
       category: "Shows",
       image: penguin3,
     },
+
     {
       id: 2,
       title: "Lion Roar Experience",
@@ -54,15 +56,6 @@ export default function EventsCards() {
       image: giraffe,
     },
     {
-      id: 4,
-      title: "Zoo Funfair & Carnival 🎪",
-      subTitle: "Stalls, Rides & Games",
-      desc: "A full-day festival with food stalls, rides, live music, and clowns!",
-      date: "Oct 5, 2025",
-      category: "Carnivals",
-      image: funfair,
-    },
-    {
       id: 5,
       title: "Aviary Bird Watching",
       subTitle: "Al Khor Park",
@@ -72,12 +65,31 @@ export default function EventsCards() {
       image: birdWatching,
     },
     {
+      id: 9,
+      title: "Panda House Visit",
+      subTitle: "Special Exhibit",
+      desc: "Meet Suhail & Thuraya, Qatar’s first giant pandas at Al Khor—an exclusive and unforgettable experience.",
+      date: "Oct 25, 2025",
+      category: "Animal Encounters",
+      image: panda,
+    },
+
+    {
+      id: 4,
+      title: "Zoo Funfair & Carnival ",
+      subTitle: "Stalls, Rides & Games",
+      desc: "A full-day festival with food stalls, rides, live music, and clowns!",
+      date: "Oct 5, 2025",
+      category: "Carnivals",
+      image: funfair,
+    },
+    {
       id: 6,
       title: "Miniature Train Ride",
       subTitle: "Family Fun",
       desc: "Ride through beautiful green landscapes of Al Khor Park & Zoo on a charming mini train—perfect for families.",
       date: "Oct 12, 2025",
-      category: "Family Activities",
+      category: "Carnivals",
       image: train,
     },
     {
@@ -86,7 +98,7 @@ export default function EventsCards() {
       subTitle: "Educational Exhibit",
       desc: "Tour the on-site museum at Al Khor Park to learn about local wildlife, conservation efforts, and the region’s ecosystem.",
       date: "Oct 15, 2025",
-      category: "Educational",
+      category: "Carnivals",
       image: museum,
     },
     {
@@ -95,20 +107,11 @@ export default function EventsCards() {
       subTitle: "Animal Farm Experience",
       desc: "Visit Baladna Park to meet cows, emus, wallabies, peacocks, and enjoy activities like ziplining, go-karts, and archery.",
       date: "Oct 20, 2025",
-      category: "Outdoor Adventure",
+      category: "Carnivals",
       image: baladna,
     },
-    {
-      id: 9,
-      title: "Panda House Visit",
-      subTitle: "Special Exhibit",
-      desc: "Meet Suhail & Thuraya, Qatar’s first giant pandas at Al Khor—an exclusive and unforgettable experience.",
-      date: "Oct 25, 2025",
-      category: "Special Exhibits",
-      image: panda,
-    },
-
   ];
+
 
 
   const categories = ["All", "Shows", "Animal Encounters", "Carnivals"];
@@ -145,7 +148,7 @@ export default function EventsCards() {
   return (
     <div className="w-full bg-gradient-to-b from-emerald-50 to-white min-h-screen pb-16">
       {/* 🎨 Upcoming Event Banner */}
-      <div className="relative w-full h-[400px] sm:h-[500px] bg-gradient-to-br from-green-900 to-green-500 overflow-hidden flex flex-col justify-center items-center text-center text-white px-3 sm:px-4 shadow-lg">
+      <div className="relative w-full h-[400px] sm:h-[500px] bg-gradient-to-br from-green-900 via-[#026b02] to-[#fdc600de] overflow-hidden flex flex-col justify-center items-center text-center text-white px-3 sm:px-4 shadow-lg">
         <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2Utb3BhY2l0eT0iMC4zIj48cGF0aCBkPSJNMzAgMTVjLTguMjg0IDAtMTUgNi43MTYtMTUgMTVzNi43MTYgMTUgMTUgMTUgMTUtNi43MTYgMTUtMTUtNi43MTYtMTUtMTUtMTV6Ii8+PHBhdGggZD0iTTMwIDIwYy01LjUyMyAwLTEwIDQuNDc3LTEwIDEwczQuNDc3IDEwIDEwIDEwIDEwLTQuNDc3IDEwLTEwLTQuNDc3LTEwLTEwLTEweiIvPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjUiLz48L2c+PC9zdmc+')]"></div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-2 sm:px-4">
@@ -174,16 +177,16 @@ export default function EventsCards() {
       </div>
 
       {/* Filter Bar */}
-      <div className="md:w-full  mx-auto px-3 sm:px-4 mt-6 sm:mt-8 relative z-20">
+      <div className="w-full mx-auto px-2 sm:px-4 mt-4 sm:mt-8 relative z-20 overflow-x-auto">
         <div
-          className=" rounded-xl  p-3 sm:p-4 flex justify-center gap-2 sm:gap-3 flex-wrap"
+          className="rounded-xl p-2 sm:p-4 flex justify-center  gap-2 sm:gap-3 flex-nowrap"
           data-aos="zoom-in"
         >
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => handleFilter(cat)}
-              className={`px-3 sm:px-5 shadow-lg border py-2 sm:py-2.5 rounded-full text-xs sm:text-base font-semibold transition-all duration-300 ${activeCategory === cat
+              className={`px-2 sm:px-4 py-2 sm:py-2 border rounded-full text-[12px] xs:text-xs sm:text-sm md:text-base font-semibold transition-all duration-300 whitespace-nowrap shadow ${activeCategory === cat
                 ? "bg-green-900 text-white shadow-md"
                 : "bg-transparent text-emerald-900 hover:bg-emerald-200"
                 }`}
@@ -195,7 +198,8 @@ export default function EventsCards() {
       </div>
 
 
-      <div className="max-w-[1450px] mx-auto px-2 sm:px-3 mt-12 sm:mt-16">
+
+      <div className="max-w-[1450px] mx-auto px-2 sm:px-3 mt-6 sm:mt-16">
         <h2
           className="text-2xl sm:text-5xl font-bold text-green-800 text-center mb-8 sm:mb-12"
           data-aos="fade-up"
@@ -217,13 +221,13 @@ export default function EventsCards() {
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group border border-emerald-100" data-aos="fade-up"
               >
                 {/* Image */}
-                <div className="relative h-48 sm:h-56 overflow-hidden">
+                <div className="relative h-48 sm:h-60 overflow-hidden">
                   <img
                     src={event.image}
                     alt={event.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute top-3 right-3 bg-emerald-600 text-white px-2 py-1 rounded-full text-[10px] sm:text-xs font-semibold uppercase">
+                  <div className="absolute top-3 right-3 bg-green-800 text-[#fdc500] px-2 py-1 rounded-full text-[10px] sm:text-xs font-semibold uppercase">
                     {event.category}
                   </div>
                   <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/70 to-transparent"></div>
@@ -249,7 +253,7 @@ export default function EventsCards() {
                   <div className="flex justify-between items-center">
                     <button
                       onClick={() => setIsOpen(true)}
-                      className="bg-green-900 hover:bg-emerald-700 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-base font-medium transition-all duration-300 hover:shadow-md flex items-center"
+                      className="bg-gradient-to-r from-[#085D2D] via-[green] to-[#fdc500] hover:bg-emerald-700 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-base font-medium transition-all duration-300 hover:shadow-md flex items-center"
                     >
                       Get Tickets
                       <svg
