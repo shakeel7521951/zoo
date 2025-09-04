@@ -4,11 +4,18 @@ import { FaLeaf } from 'react-icons/fa' // Leaf icon
 import { Link } from 'react-router-dom'
 const AboutZoo = () => {
   return (
-    <div className='w-full mx-auto py-16 px-6 md:px-10 lg:px-14 box-border relative'>
+    <div className='w-full mx-auto py-16 px-6 md:px-10 lg:px-14 lg:py-16 box-border relative'>
       {/* Section Title */}
-      <p className='text-lg tracking-wide text-green-700 font-semibold mb-6 text-center lg:text-left'>
-        <span className='mr-2'>#</span>Welcome To CityZoo
-      </p>
+<div className='text-center lg:text-left'>
+  <span
+        className='inline-block text-lg font-semibold tracking-wider 
+  text-green-800 uppercase bg-green-100 px-4 py-2 rounded-full  mb-3 md:mb-4
+  shadow-inner'
+      >
+        Welcome to City Zoo
+      </span>
+</div>
+    
 
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative overflow-hidden'>
         {/* Left Image */}
@@ -72,7 +79,7 @@ const AboutZoo = () => {
           {/* Button */}
           <div className='mt-6 text-center lg:text-left'>
             <Link
-              to="/about"
+              to='/about'
               className='inline-block bg-gradient-to-b from-green-900 to-[#fdc500] text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full shadow-md transition transform hover:-translate-y-1 hover:shadow-[0_0_15px_#fdc500]'
             >
               Read More

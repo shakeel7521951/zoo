@@ -35,9 +35,15 @@ const TestimonialSwiper = () => {
   return (
     <div className='w-full bg-gradient-to-br from-green-900 via-green-900 to-[#fdc500] pt-16 pb-12'>
       <div className='max-w-5xl mx-auto px-4'>
-        <p className='text-[#fdc500] font-semibold uppercase tracking-wide mb-1 lg:text-left text-center'>
-          # Testimonials
-        </p>
+        <div className='text-center lg:text-left'>
+          <span
+            className='inline-block text-lg font-semibold tracking-wider 
+  text-green-800 uppercase bg-green-100 px-4 py-2 rounded-full  mb-3
+  shadow-inner'
+          >
+            Testimonials
+          </span>
+        </div>
 
         {/* Title */}
         <h2

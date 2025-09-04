@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import { Pagination, Autoplay, Navigation } from 'swiper/modules'
 import { FaTicketAlt, FaInfoCircle } from 'react-icons/fa'
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -11,87 +11,108 @@ import { useState } from 'react'
 
 const VideoSwiper = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  // Zoo-specific unique content
   const slides = [
     {
-      video: './videos/tiger.mp4',
-      title: 'Roar with the Tigers',
-      text: 'Step into the wild and feel the roar of our magnificent tigers.'
+      title: 'Discover the Wild at City Zoo',
+      text: 'From roaring tigers to playful monkeys, explore the beauty and diversity of wildlife up close.'
     },
     {
-      video: './videos/giraffe.mp4',
-      title: 'Grace with Giraffes',
-      text: 'Discover the tallest animals on Earth and watch giraffes roam elegantly.'
+      title: 'An Adventure Beyond Imagination',
+      text: 'Stroll through lush habitats, encounter exotic animals, and learn about their fascinating worlds.'
     },
     {
-      video: './videos/flamingo.mp4',
-      title: 'Graceful Flamingos',
-      text: 'Marvel at the elegance of our vibrant flamingo sanctuary.'
+      title: 'Join Our Mission for Nature',
+      text: 'Be part of conservation efforts that protect endangered species while creating lasting memories.'
     }
   ]
 
   return (
-    <div className='relative w-full h-[100vh] custom-swiper overflow-hidden'>
+    <div className='relative w-full h-screen custom-swiper overflow-hidden'>
+      {/* One common video background */}
+      <video
+        className='absolute top-0 left-0 w-full h-full object-cover'
+        src='./videos/tiger.mp4'
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster='./images/tiger.png'
+      />
+
+      {/* Gradient Overlay */}
+      <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent'></div>
+
+      {/* Swiper */}
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
+        modules={[Pagination, Autoplay, Navigation]}
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 6000, disableOnInteraction: false }}
         loop={true}
-        className='h-full'
+        className='h-full relative z-10'
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={index} className='relative'>
-            {/* Background Video */}
-            <video
-              className='absolute top-0 left-0 w-full h-full object-cover'
-              src={slide.video}
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
+          <SwiperSlide
+            key={index}
+            className='relative flex justify-center items-center h-screen text-center text-white px-4'
+          >
+            <div className='max-w-3xl  mx-auto mt-[240px]  md:mt-[400px] lg:mt-[220px] text-center px-4'>
+              {/* Title */}
+              <div className='flex justify-center px-2 sm:px-4 '>
+                <h1
+                  className='text-2xl sm:text-4xl md:text-[43px] lg:text-6xl 
+               font-extrabold mb-4 
+               bg-gradient-to-r from-green-400 to-yellow-300 
+               text-transparent bg-clip-text drop-shadow-lg
+               leading-tight text-center 
+               md:whitespace-nowrap'
+                  data-aos='fade-up'
+                  data-aos-delay='300'
+                >
+                  {slide.title}
+                </h1>
+              </div>
 
-            {/* Gradient Overlay */}
-            <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent'></div>
-
-            {/* Content */}
-            <div className='relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-6'>
-              <h1
-                className='text-3xl md:text-6xl font-bold mb-4 drop-shadow-xl'
-                data-aos='fade-up'
-                data-aos-delay='200'
-              >
-                {slide.title}
-              </h1>
-
+              {/* Subtitle */}
               <p
-                className='text-base md:text-xl mb-8 max-w-3xl drop-shadow-lg'
+                className='text-base sm:text-lg md:text-xl leading-relaxed mb-8 
+               text-gray-100 md:text-gray-200 max-w-2xl mx-auto md:px-[10px]'
                 data-aos='fade-up'
-                data-aos-delay='300'
+                data-aos-delay='600'
               >
                 {slide.text}
               </p>
 
+              {/* Buttons Row */}
               <div
-                className='flex gap-4'
+                className='flex flex-wrap justify-center gap-3 sm:gap-4'
                 data-aos='fade-up'
-                data-aos-delay='400'
+                data-aos-delay='900'
               >
+                {/* Buy Tickets */}
                 <button
-                onClick={()=>setIsModalOpen(true)}
-                  className='bg-green-900 flex items-center gap-2 px-4 py-2 rounded-lg shadow-lg 
-               hover:bg-green-950 hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.5)] 
-               transition-all duration-300 text-sm md:text-[19px] font-semibold'
+                  onClick={() => setIsModalOpen(true)}
+                  className='bg-green-800 text-white flex items-center justify-center gap-2
+                 px-4 py-2 text-sm sm:text-base md:text-lg
+                 rounded-lg shadow-md font-semibold
+                 hover:bg-green-900 hover:scale-105 
+                 hover:shadow-[0_0_20px_rgba(34,197,94,0.6)] 
+                 transition-all duration-300'
                 >
                   <FaTicketAlt /> Buy Tickets
                 </button>
 
-
+                {/* Explore More */}
                 <Link
                   to='/about'
-                  className='bg-[#fdc700] text-black flex items-center gap-2 px-4 py-2 rounded-lg shadow-lg 
-               hover:bg-yellow-400 hover:scale-105 hover:shadow-[0_0_20px_rgba(253,199,0,0.5)] 
-               transition-all duration-300 text-sm md:text-[18px] font-semibold'
+                  className='bg-yellow-400 text-black flex items-center justify-center gap-2
+                 px-4 py-2 text-sm sm:text-base md:text-lg
+                 rounded-lg shadow-md font-semibold
+                 hover:bg-yellow-500 hover:scale-105 
+                 hover:shadow-[0_0_20px_rgba(253,224,71,0.6)] 
+                 transition-all duration-300'
                 >
                   <FaInfoCircle /> Explore More
                 </Link>
@@ -100,7 +121,9 @@ const VideoSwiper = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-       <Model isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
+      {/* Modal */}
+      <Model isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   )
 }

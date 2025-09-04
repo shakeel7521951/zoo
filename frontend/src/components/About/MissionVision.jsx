@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { Leaf, Users, Shield, Target, Eye, Heart, Ticket, Sparkles } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
+import Model from "../common/Model";
+import { useState } from "react";
 
 function MissionVision() {
   useEffect(() => {
@@ -13,6 +16,9 @@ function MissionVision() {
       offset: 100,
     });
   }, []);
+
+  const [isOpen, setIsOpen] = useState(false)
+  const MotionLink = motion(Link);
 
   const coreValues = [
     {
@@ -111,6 +117,7 @@ function MissionVision() {
   };
 
   return (
+    <>
     <section className="py-16 bg-gradient-to-b from-slate-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -307,8 +314,8 @@ function MissionVision() {
               conservation, and education.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <motion.a
-                href="#adopt"
+              <MotionLink
+              to="/services"
                 whileHover={{ 
                   scale: 1.05,
                   boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.3)"
@@ -317,18 +324,18 @@ function MissionVision() {
                 className="px-6 py-3 bg-gradient-to-r from-green-900 to-[#fdc500] text-white font-semibold rounded-xl hover:from-[#fdc500] hover:to-green-900 transition-all duration-300 flex items-center gap-2 justify-center"
               >
                 <Heart className="w-5 h-5" /> Adopt an Animal
-              </motion.a>
-              <motion.a
-                href="#tickets"
+              </MotionLink>
+              <motion.button
                 whileHover={{ 
                   scale: 1.05,
                   boxShadow: "0 10px 25px -5px rgba(255, 255, 255, 0.3)"
                 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={()=>setIsOpen(true)}
                 className="px-6 py-3 border-2 border-white text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300 flex items-center gap-2 justify-center"
               >
                 <Ticket className="w-5 h-5" /> Buy Tickets
-              </motion.a>
+              </motion.button>
             </div>
           </motion.div>
           
@@ -362,6 +369,9 @@ function MissionVision() {
         </motion.div>
       </div>
     </section>
+    <Model isOpen={isOpen} onClose={()=>setIsOpen(false)
+    }/>
+    </>
   );
 }
 

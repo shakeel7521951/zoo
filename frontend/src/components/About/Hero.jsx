@@ -3,8 +3,15 @@ import { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { Ticket, ArrowRight, Heart, Users, Star } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import Model from '../common/Model'
+import { useState } from 'react'
+
+
+
 
 export default function HeroSection () {
+  const [isOpen, setIsOpen] = useState(false)
   useEffect(() => {
     AOS.init({
       duration: 1200,
@@ -37,10 +44,11 @@ export default function HeroSection () {
   ]
 
   return (
+    <>
     <header
       className='relative overflow-hidden 
                  bg-gradient-to-br from-green-900 via-green-800 to-[#fdc500] 
-                 py-14 sm:py-20 md:py-28'
+                 py-14 sm:py-20 md:py-28 top-[40px]'
       aria-label='Hero section for Wildlife Sanctuary'
     >
       {/* Background blobs */}
@@ -134,34 +142,40 @@ export default function HeroSection () {
           data-aos='flip-up'
           data-aos-delay='600'
         >
-          <a
+          <button
+          onClick={()=>setIsOpen(true)}
             className='inline-flex items-center justify-center gap-2 rounded-xl 
                        bg-green-900 hover:bg-green-950 px-6 py-3 sm:px-7 sm:py-4 
                        font-semibold text-white shadow-lg hover:shadow-[0_0_20px_rgba(34,197,94,0.5)] 
                        transform hover:scale-105 transition-all duration-300'
           >
             <Ticket className='w-5 h-5' /> Buy Tickets
-          </a>
+          </button>
 
-          <a
+          <Link
+          to="/services"
             className='inline-flex items-center justify-center gap-2 rounded-xl 
                        bg-[#fdc500] hover:bg-yellow-400 px-6 py-3 sm:px-7 sm:py-4 
                        font-semibold text-slate-900 shadow-lg hover:shadow-[0_0_20px_rgba(253,199,0,0.5)] 
                        transform hover:scale-105 transition-all duration-300'
           >
             <Heart className='w-5 h-5' /> Adopt an Animal
-          </a>
+          </Link>
 
-          <a
+          <Link to="/services"
+          
             className='inline-flex items-center justify-center gap-2 rounded-xl 
                        bg-white border border-slate-200 hover:bg-slate-100 px-6 py-3 sm:px-7 sm:py-4 
                        font-medium text-slate-900 shadow-lg hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] 
                        transform hover:scale-105 transition-all duration-300'
           >
             Learn More <ArrowRight className='w-5 h-5' />
-          </a>
+          </Link>
         </div>
       </div>
     </header>
+
+    <Model isOpen={isOpen} onClose={()=>setIsOpen(false)}/>
+    </>
   )
 }
