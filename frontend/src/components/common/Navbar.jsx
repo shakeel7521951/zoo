@@ -61,7 +61,7 @@ const Navbar = () => {
 
             {/* Desktop Nav */}
             <div className="hidden lg:block">
-              <div className="ml-10 flex items-baseline space-x-6">
+              <div className="ml-10 flex items-baseline space-x-3">
                 {navItems.map((item, index) => (
                   <Link
                     key={index}
@@ -120,13 +120,13 @@ const Navbar = () => {
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center space-x-4">
-              <button
+              {/* <button
                 onClick={() => setShowModal(true)}
                 className="flex items-center text-[18px] px-4 py-2 bg-yellow-400 text-green-900 font-semibold rounded-md shadow-md hover:bg-yellow-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg group"
               >
                 <FaTicketAlt className="mr-2 text-[18px] transform group-hover:scale-110 transition-transform duration-300" />
                 Buy Tickets
-              </button>
+              </button> */}
               <Link
                 to="/login"
                 className="flex items-center text-[18px] px-4 py-2 bg-white text-green-700 font-medium rounded-md shadow hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg group"
@@ -192,7 +192,7 @@ const Navbar = () => {
             </div>
             
             <div className="pt-4 border-t border-green-600 mt-2">
-              <button
+              {/* <button
                 onClick={() => {
                   setIsOpen(false);
                   setShowModal(true);
@@ -200,7 +200,7 @@ const Navbar = () => {
                 className="flex items-center justify-center px-4 py-3 my-2 bg-yellow-400 text-green-900 font-semibold rounded-md shadow hover:bg-yellow-500 transition-colors duration-300 w-full"
               >
                 <FaTicketAlt className="mr-2" /> Buy Tickets
-              </button>
+              </button> */}
               <Link
                 to="/login"
                 className="flex items-center justify-center px-4 py-3 bg-white text-green-700 font-medium rounded-md shadow hover:bg-gray-100 transition-colors duration-300"

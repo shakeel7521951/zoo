@@ -45,7 +45,6 @@ export default function ContactForm() {
 
       {/* Heading */}
       <div className="text-center mb-12 sm:mb-16 relative" data-aos="fade-up">
-        <div className="absolute -top-6 sm:-top-8 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-1 bg-gradient-to-r from-[#10291e] to-[#0e2c1f] rounded-full"></div>
         <h1
           className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-serif text-green-800"
           data-aos="fade-down"
@@ -230,11 +229,6 @@ export default function ContactForm() {
                   title: "Download Tickets",
                   description: "Access your zoo tickets",
                 },
-                // {
-                //   icon: FaComments,
-                //   title: "Animal & FAQs",
-                //   description: "Learn how you can support animals",
-                // },
                 {
                   icon: FaQuestionCircle,
                   title: "Visit FAQs",

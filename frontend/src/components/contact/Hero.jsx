@@ -98,9 +98,9 @@ export default function Hero() {
           {/* Primary Button */}
           <button
             type="button"
-            className="relative bg-green-900 hover:bg-green-950 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden flex items-center"
+            className="relative bg-green-900 hover:bg-green-950 text-white px-6 py-3 sm:px-5 sm:py-4 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden flex items-center"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-[#2D6A4F] to-[#1B4332] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#154b33] to-[rgb(27,67,50)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <span className="relative z-10 whitespace-nowrap flex items-center">
               <FaTicketAlt className="mr-2 sm:mr-3 transform group-hover:scale-110 transition-transform duration-300" />
               Explore Animal
@@ -111,7 +111,7 @@ export default function Hero() {
           {/* Secondary Button */}
           <button
             type="button"
-            className="relative border-2 border-[#F2EDE9] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl shadow-lg hover:-translate-y-1 transition-all duration-300 group overflow-hidden flex items-center"
+            className="relative border-2 border-[#F2EDE9] text-white px-6 py-3 sm:px-5 sm:py-4 rounded-xl shadow-lg hover:-translate-y-1 transition-all duration-300 group overflow-hidden flex items-center"
           >
             <div className="absolute inset-0 bg-white/5 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <span className="relative z-10 whitespace-nowrap flex items-center">
@@ -123,7 +123,7 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="mt-10 pb-5 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
             {
               number: "200+",
@@ -139,18 +139,21 @@ export default function Hero() {
             },
             {
               number: "1M+",
-              label: "Visitors Yearly",
+              label: "Visitors Yearlys",
               icon: FaUser,
               delay: 1000,
             },
           ].map((stat, index) => (
             <div
               key={index}
-              className="bg-gradient-to-b from-[#1B4332]/50 to-[#081C15]/40 p-6 rounded-2xl backdrop-blur-md border border-[#2D6A4F]/40 hover:border-[#95D5B2]/60 transition-all duration-500 group hover:-translate-y-2 shadow-lg hover:shadow-xl"
+              className="bg-gradient-to-b from-[#1B4332]/50 to-[#081C15]/40 p-6 rounded-2xl backdrop-blur-md border border-[#2D6A4F]/60 transition-all duration-500 group shadow-lg hover:shadow-xl group-hover:scale-105 group-hover:border-yellow-400"
               data-aos="fade-up"
               data-aos-delay={stat.delay}
             >
-              <div
+              <div className="absolute inset-0 rounded-2xl border border-transparent bg-gradient-to-r 
+                          from-yellow-400/40 to-green-400/40 opacity-0 
+                          group-hover:opacity-100 transition duration-500" />
+                           <div
                 className="flex justify-center mb-2"
                 data-aos="zoom-in"
                 data-aos-delay={stat.delay + 200}
@@ -178,4 +181,3 @@ export default function Hero() {
     </section>
   );
 }
-
