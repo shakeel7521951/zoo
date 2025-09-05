@@ -62,9 +62,9 @@ export default function Hero() {
             fontFamily: "'Playfair Display', serif",
           }}
         >
-          Welcome to{" "}
+          Welcomes too{" "}
           <span className="relative inline-block">
-            <span className="text-[#F2EDE9] relative z-10">Wildlife Zoo</span>
+            <span className="text-[#F2EDE9] relative z-10">Wildlife Zoos</span>
           </span>
         </h1>
 
@@ -139,7 +139,7 @@ export default function Hero() {
             },
             {
               number: "1M+",
-              label: "Visitors Yearlys",
+              label: "Visitors Yearly",
               icon: FaUser,
               delay: 1000,
             },
