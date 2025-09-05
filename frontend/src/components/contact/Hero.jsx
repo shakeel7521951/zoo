@@ -81,7 +81,7 @@ export default function Hero() {
           data-aos="zoom-in-down"
           data-aos-delay="200"
         >
-          Discover exotic animals, learn about conservation, and experience the
+          Discover exotic animals, learn about conservation, and experiencess the
           beauty of wildlife up close.{" "}
           <span className="font-semibold text-[#95D5B2] bg-gradient-to-r from-[#2D6A4F]/30 to-[#1B4332]/10 px-2 py-1 rounded-md inline-flex items-center">
             Adventure awaits you!
@@ -139,7 +139,7 @@ export default function Hero() {
             },
             {
               number: "1M+",
-              label: "Visitors Yearlys",
+              label: "Visitors Yearly",
               icon: FaUser,
               delay: 1000,
             },
