@@ -170,7 +170,7 @@ export default function EventsCards() {
             ))}
           </div>
 
-          <button className="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-emerald-900 px-5 sm:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-lg font-bold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl" data-aos="zoom-out">
+          <button onClick={()=>setIsOpen(true)} className="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-emerald-900 px-5 sm:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-lg font-bold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl" data-aos="zoom-out">
             Get Tickets Now
           </button>
         </div>
